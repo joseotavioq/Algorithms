@@ -2,7 +2,7 @@ namespace Algoritmos
 {
     public static class SearchArray
     {
-        //O(n)
+        //Time: O(n)
         public static int MaximumElement(int[] listOfNumbers)
         {
             var max = listOfNumbers[0];
@@ -16,7 +16,7 @@ namespace Algoritmos
             return max;
         }
 
-        //O(n^2)
+        //Time: O(n^2)
         public static bool HasDuplicateElement(int[] listOfNumbers)
         {
             var hasDuplicate = false;
@@ -39,7 +39,7 @@ namespace Algoritmos
             return hasDuplicate;
         }
 
-        //O(log N)
+        //Time: O(log N)
         public static bool BinarySearch_Linear(int[] listOfNumbers, int valueToSearchFor)
         {
             int highIndex = listOfNumbers.Length;
@@ -59,7 +59,7 @@ namespace Algoritmos
             return false;
         }
 
-        //O(log N)
+        //Time: O(log N)
         public static bool BinarySearch_Recursive(int[] listOfNumbers, int valueToSearchFor, int lowIndex, int highIndex)
         {
             if (lowIndex > highIndex)
@@ -73,6 +73,44 @@ namespace Algoritmos
                 return BinarySearch_Recursive(listOfNumbers, valueToSearchFor, lowIndex, midIndex - 1);
             else
                 return true;
+        }
+
+        //Time: O(n)
+        public static int MagicOf3(int number)
+        {
+            int i, m = 1;
+
+            for (i = 1; i <= number; i++)
+            {
+                if (m == 0) return i;
+                m = (10 * m + 1) % number;
+            }
+
+            return -1;
+        }
+
+        //Time: O(n)
+        public static int MostFrequentNumber(int[] listOfNumbers)
+        {
+            var max = listOfNumbers[0];
+            var mostFrequent = -1;
+            var sizeOfArray = listOfNumbers.Length;
+
+            for (var i = 0; i < sizeOfArray; i++)
+            {
+                listOfNumbers[(listOfNumbers[i] % sizeOfArray)] += sizeOfArray;
+            }
+
+            for (var j = 1; j < sizeOfArray; j++)
+            {
+                if (listOfNumbers[j] > max)
+                {
+                    max = listOfNumbers[j];
+                    mostFrequent = j;
+                }
+            }
+
+            return mostFrequent;
         }
     }
 }

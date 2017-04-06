@@ -26,6 +26,7 @@ namespace AlgoritmosTest
         [Fact]
         public void Binary_Search_Linear()
         {
+            //Can only (and should) be used on sorted data.
             int[] listOfNumbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             var found = SearchArray.BinarySearch_Linear(listOfNumbers, 7);
 
@@ -35,10 +36,31 @@ namespace AlgoritmosTest
         [Fact]
         public void Binary_Search_Recursive()
         {
+            //Can only (and should) be used on sorted data.
             int[] listOfNumbers = new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9 };
             var found = SearchArray.BinarySearch_Recursive(listOfNumbers, 7, 0, listOfNumbers.Length);
 
             Assert.True(found);
+        }
+
+        [Fact]
+        public void Magic_Of_3()
+        {
+            var resultFor3 = SearchArray.MagicOf3(3);
+            var resultFor13 = SearchArray.MagicOf3(13);
+
+            Assert.Equal(3, resultFor3);
+            Assert.Equal(6, resultFor13);
+        }
+
+        [Fact]
+        public void Most_Frequent_Number_In_An_Array()
+        {
+            int[] listOfNumbers = new int[] { 1, 3, 4, 5, 2, 2, 3, 2 };
+
+            var mostFrequent = SearchArray.MostFrequentNumber(listOfNumbers);
+
+            Assert.Equal(2, mostFrequent);
         }
     }
 }

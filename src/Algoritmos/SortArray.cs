@@ -2,7 +2,7 @@ namespace Algoritmos
 {
     public static class SortArray
     {
-        //O(n^2)
+        //Time: O(n^2)
         public static int[] Insertion(int[] listOfNumbers)
         {
             for (var i = 1; i < listOfNumbers.Length; i++)
@@ -20,7 +20,7 @@ namespace Algoritmos
             return listOfNumbers;
         }
 
-        //O(n^2)
+        //Time: O(n^2)
         public static int[] Selection(int[] listOfNumbers)
         {
             for (var i = 0; i < listOfNumbers.Length - 1; i++)
@@ -42,7 +42,7 @@ namespace Algoritmos
             return listOfNumbers;
         }
 
-        //O(n log N)
+        //Time: O(n log N)
         public static int[] Quick(int[] listOfNumbers, int left, int right)
         {
             if(left < right)
@@ -77,7 +77,7 @@ namespace Algoritmos
             return listOfNumbers;
         }
 
-        //O(n^2)
+        //Time: O(n^2)
         public static int[] Bubble(int[] listOfNumbers)
         {
             for(var i = listOfNumbers.Length - 1; i > 1; i--)

@@ -1,1 +1,3 @@
 # Algoritmos
+
+Estudo sobre algoritmos

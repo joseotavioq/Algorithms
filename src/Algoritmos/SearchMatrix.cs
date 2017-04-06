@@ -2,7 +2,7 @@ namespace Algoritmos
 {
     public class SearchMatrix
     {
-        //O(n)
+        //Time: O(n)
         public static int CountNegativeIntegers(int[,] matrixOfNumbers)
         {
             int i = 0, j = matrixOfNumbers.GetLength(0) - 1, count = 0;
