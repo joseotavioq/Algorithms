@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace Algoritmos
 {
     public static class SearchArray
@@ -111,6 +113,36 @@ namespace Algoritmos
             }
 
             return mostFrequent;
+        }
+
+        //Time: O(n)
+        public static Dictionary<string, int> CountDistance(string[] listOfItems)
+        {
+            Dictionary<string, int> countDistance = new Dictionary<string, int>();
+            Dictionary<string, int> lastPosition = new Dictionary<string, int>();
+
+            for(var i = 0; i < listOfItems.Length; i++)
+            {
+                if(countDistance.ContainsKey(listOfItems[i]))
+                {
+                    var minPos = i - lastPosition[listOfItems[i]];
+
+                    if(countDistance[listOfItems[i]] != -1)
+                    {
+                        minPos = System.Math.Min(minPos, countDistance[listOfItems[i]]);
+                        lastPosition[listOfItems[i]] = i;
+                    }
+
+                    countDistance[listOfItems[i]] = minPos;
+                }
+                else
+                {
+                    countDistance.Add(listOfItems[i], -1);
+                    lastPosition.Add(listOfItems[i], i);
+                }
+            }
+
+            return countDistance;
         }
     }
 }

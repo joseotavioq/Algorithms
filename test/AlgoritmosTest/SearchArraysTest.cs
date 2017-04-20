@@ -62,5 +62,29 @@ namespace AlgoritmosTest
 
             Assert.Equal(2, mostFrequent);
         }
+
+        [Fact]
+        public void Count_Distance_For_Each_Value_In_An_Array()
+        {
+            string[] listOfItems = new string[] { "aa", "bb", "cc", "aa", "cc", "bb", "dd", "aa" };
+
+            var result = SearchArray.CountDistance(listOfItems);
+
+            Assert.Equal(3, result["aa"]);
+            Assert.Equal(4, result["bb"]);
+            Assert.Equal(2, result["cc"]);
+        }
+
+        [Fact]
+        public void Count_Distance_For_Each_Value_In_An_Array_2()
+        {
+            string[] listOfItems = new string[] { "aa", "dd", "bb", "cc", "aa", "dd", "cc", "dd", "aa", "bb", "dd", "aa", "cc" };
+
+            var result = SearchArray.CountDistance(listOfItems);
+
+            Assert.Equal(3, result["aa"]);
+            Assert.Equal(7, result["bb"]);
+            Assert.Equal(3, result["cc"]);
+        }
     }
 }

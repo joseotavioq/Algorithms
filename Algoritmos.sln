@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.26403.3
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AlgoritmosTest", "test\AlgoritmosTest\AlgoritmosTest.xproj", "{4AC46DF2-174D-42A9-84D5-A36F003F51FF}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "AlgoritmosTest", "test\AlgoritmosTest\AlgoritmosTest.csproj", "{4AC46DF2-174D-42A9-84D5-A36F003F51FF}"
 EndProject
-Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Algoritmos", "src\Algoritmos\Algoritmos.xproj", "{8F760990-8256-43D4-ACE5-BD63D4240C55}"
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "Algoritmos", "src\Algoritmos\Algoritmos.csproj", "{8F760990-8256-43D4-ACE5-BD63D4240C55}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
