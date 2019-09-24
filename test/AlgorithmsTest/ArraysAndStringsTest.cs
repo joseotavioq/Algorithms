@@ -24,5 +24,25 @@ namespace AlgorithmsTest
 
             Assert.Equal("!smhtiroglA gninraeL", returnedValue);
         }
+
+        [Fact]
+        public void Reverse_The_Entire_String_Fast_With_Odd()
+        {
+            string myEntireString = "Learning Algorithms";
+
+            string returnedValue = new ArraysAndStrings().ReverseString_Fast(myEntireString);
+
+            Assert.Equal("smhtiroglA gninraeL", returnedValue);
+        }
+
+        [Fact]
+        public void Reverse_The_Entire_String_Fast_With_Even()
+        {
+            string myEntireString = "Learning Algorithms!";
+
+            string returnedValue = new ArraysAndStrings().ReverseString_Fast(myEntireString);
+
+            Assert.Equal("!smhtiroglA gninraeL", returnedValue);
+        }
     }
 }
