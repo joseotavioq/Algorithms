@@ -1,4 +1,4 @@
-namespace Algoritmos
+namespace Algorithms
 {
     public static class SortArray
     {

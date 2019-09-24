@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 
-namespace Algoritmos
+namespace Algorithms
 {
-    public class HashMap
+    public static class HashMap
     {
         //Time: O(n)
         public static Dictionary<string,int> FindUniqueWordsAndTheirCount(string[] words)

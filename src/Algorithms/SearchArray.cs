@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Algoritmos
+namespace Algorithms
 {
     public static class SearchArray
     {

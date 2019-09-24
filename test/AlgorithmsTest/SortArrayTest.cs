@@ -1,7 +1,7 @@
-using Algoritmos;
+using Algorithms;
 using Xunit;
 
-namespace AlgoritmosTest
+namespace AlgorithmsTest
 {
     public class SortArrayTest
     {
