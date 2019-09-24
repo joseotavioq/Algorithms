@@ -28,6 +28,12 @@ namespace Algorithms
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
+        public string ReverseString_OneLine1(string myEntireString) {
+            return new string(myEntireString.Reverse().ToArray());
+        }
+
+        [Benchmark]
+        [Arguments("Learning Algorithms")]
         public string ReverseString_Fast(string myEntireString)
         {
             int halfSize = myEntireString.Length / 2;
@@ -42,6 +48,22 @@ namespace Algorithms
 
             if (halfSize % 2 != 0)
                 reversedArray[halfSize] = myEntireString[halfSize];
+
+            return new string(reversedArray);
+        }
+
+        [Benchmark]
+        [Arguments("Learning Algorithms")]
+        public string ReverseString_Fast1(string myEntireString) {
+
+            char[] reversedArray = myEntireString.ToCharArray();
+            char buffer=' ';
+
+            for (int i = 0,  j = myEntireString.Length-1; i < myEntireString.Length / 2; i++, j--) {
+                buffer = reversedArray[i];
+                reversedArray[i] = reversedArray[j];
+                reversedArray[j] = buffer;
+            }
 
             return new string(reversedArray);
         }
