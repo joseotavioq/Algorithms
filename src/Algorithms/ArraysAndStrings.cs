@@ -54,7 +54,7 @@ namespace Algorithms
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
-        public string ReverseString_Fast1(string myEntireString) {
+        public string ReverseString_FastVafzamora1(string myEntireString) {
 
             char[] reversedArray = myEntireString.ToCharArray();
             char buffer=' ';
@@ -63,6 +63,20 @@ namespace Algorithms
                 buffer = reversedArray[i];
                 reversedArray[i] = reversedArray[j];
                 reversedArray[j] = buffer;
+            }
+
+            return new string(reversedArray);
+        }
+
+        [Benchmark]
+        [Arguments("Learning Algorithms")]
+        public string ReverseString_FastVafzamora2(string myEntireString) {
+
+            char[] reversedArray = new char[myEntireString.Length];
+
+            for (int i = 0, j = myEntireString.Length - 1; i < (myEntireString.Length/2 + myEntireString.Length % 2); i++, j--) {
+                reversedArray[i] = myEntireString[j];
+                reversedArray[j] = myEntireString[i];
             }
 
             return new string(reversedArray);
