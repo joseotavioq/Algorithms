@@ -4,7 +4,7 @@ My study about algorithms.
 
 ## Benchmark Results
 
-# Reverse String - [File](src/Algorithms/ArraysAndStrings/ReverseString.cs)
+### Reverse String - [File](src/Algorithms/ArraysAndStrings/ReverseString.cs)
 
 |          Method |      myEntireString |      Mean |      Error |     StdDev |    Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |---------------- |-------------------- |----------:|-----------:|-----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
@@ -15,7 +15,7 @@ My study about algorithms.
 | Vafzamora_Fast1 | Learning Algorithms |  45.50 ns |  0.5212 ns |  0.4875 ns |  45.55 ns |  0.65 |    0.01 | 0.0305 |     - |     - |     128 B |
 | Vafzamora_Fast2 | Learning Algorithms |  41.28 ns |  1.3377 ns |  3.8382 ns |  39.22 ns |  0.64 |    0.07 | 0.0305 |     - |     - |     128 B |
 
-# Merge Sorted Array - [File](src/Algorithms/ArraysAndStrings/MergeSortedArray.cs)
+### Merge Sorted Array - [File](src/Algorithms/ArraysAndStrings/MergeSortedArray.cs)
 
 |    Method | firstArray | secondArray |     Mean |     Error |    StdDev |   Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |---------- |----------- |------------ |---------:|----------:|----------:|---------:|------:|--------:|-------:|------:|------:|----------:|
