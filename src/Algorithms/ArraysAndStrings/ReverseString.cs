@@ -2,15 +2,16 @@
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 
-namespace Algorithms
+namespace Algorithms.ArraysAndStrings
 {
     [MemoryDiagnoser]
-    public class ArraysAndStrings
+    public class ReverseString
     {
         private const string input = "Learning Algorithms";
-
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         [Arguments(input)]
+        public string FirstTry(string myEntireString)
+
         public string ReverseString(string myEntireString)
         {
             StringBuilder reversedString = new StringBuilder(myEntireString.Length);
@@ -22,21 +23,22 @@ namespace Algorithms
         }
 
         [Benchmark]
-        [Arguments(input)]
-        public string ReverseString_OneLine(string myEntireString)
+        [Arguments("Learning Algorithms")]
+        public string InJustOneLine(string myEntireString)
         {
             return string.Join("", myEntireString.ToCharArray().Reverse());
         }
 
         [Benchmark]
-        [Arguments(input)]
-        public string ReverseString_OneLine1(string myEntireString) {
+        [Arguments("Learning Algorithms")]
+        public string InJustOneLine2(string myEntireString)
+        {
             return new string(myEntireString.Reverse().ToArray());
         }
 
         [Benchmark]
-        [Arguments(input)]
-        public string ReverseString_Fast(string myEntireString)
+        [Arguments("Learning Algorithms")]
+        public string Fast(string myEntireString)
         {
             int halfSize = myEntireString.Length / 2;
 
@@ -55,13 +57,15 @@ namespace Algorithms
         }
 
         [Benchmark]
-        [Arguments(input)]
-        public string ReverseString_FastVafzamora1(string myEntireString) {
+        [Arguments("Learning Algorithms")]
+        public string Vafzamora_Fast1(string myEntireString)
+        {
 
             char[] reversedArray = myEntireString.ToCharArray();
-            char buffer=' ';
+            char buffer = ' ';
 
-            for (int i = 0,  j = myEntireString.Length-1; i < myEntireString.Length / 2; i++, j--) {
+            for (int i = 0, j = myEntireString.Length - 1; i < myEntireString.Length / 2; i++, j--)
+            {
                 buffer = reversedArray[i];
                 reversedArray[i] = reversedArray[j];
                 reversedArray[j] = buffer;
@@ -71,8 +75,9 @@ namespace Algorithms
         }
 
         [Benchmark]
-        [Arguments(input)]
-        public string ReverseString_FastVafzamora2(string myEntireString) {
+        [Arguments("Learning Algorithms")]
+        public string Vafzamora_Fast2(string myEntireString)
+        {
 
             char[] reversedArray = new char[myEntireString.Length];
             int middle = (myEntireString.Length / 2 + myEntireString.Length % 2);

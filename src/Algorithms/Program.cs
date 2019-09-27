@@ -1,7 +1,5 @@
-﻿using BenchmarkDotNet.Running;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Algorithms.ArraysAndStrings;
+using BenchmarkDotNet.Running;
 
 namespace Algorithms
 {
@@ -9,7 +7,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<ArraysAndStrings>();
+            var summary = BenchmarkRunner.Run<ReverseString>();
         }
     }
 }
