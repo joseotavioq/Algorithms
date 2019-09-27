@@ -8,11 +8,10 @@ namespace Algorithms.ArraysAndStrings
     public class ReverseString
     {
         private const string input = "Learning Algorithms";
+        
         [Benchmark(Baseline = true)]
         [Arguments(input)]
         public string FirstTry(string myEntireString)
-
-        public string ReverseString(string myEntireString)
         {
             StringBuilder reversedString = new StringBuilder(myEntireString.Length);
 
@@ -23,21 +22,21 @@ namespace Algorithms.ArraysAndStrings
         }
 
         [Benchmark]
-        [Arguments("Learning Algorithms")]
+        [Arguments(input)]
         public string InJustOneLine(string myEntireString)
         {
             return string.Join("", myEntireString.ToCharArray().Reverse());
         }
 
         [Benchmark]
-        [Arguments("Learning Algorithms")]
+        [Arguments(input)]
         public string InJustOneLine2(string myEntireString)
         {
             return new string(myEntireString.Reverse().ToArray());
         }
 
         [Benchmark]
-        [Arguments("Learning Algorithms")]
+        [Arguments(input)]
         public string Fast(string myEntireString)
         {
             int halfSize = myEntireString.Length / 2;
@@ -57,7 +56,7 @@ namespace Algorithms.ArraysAndStrings
         }
 
         [Benchmark]
-        [Arguments("Learning Algorithms")]
+        [Arguments(input)]
         public string Vafzamora_Fast1(string myEntireString)
         {
 
@@ -75,7 +74,7 @@ namespace Algorithms.ArraysAndStrings
         }
 
         [Benchmark]
-        [Arguments("Learning Algorithms")]
+        [Arguments(input)]
         public string Vafzamora_Fast2(string myEntireString)
         {
 
