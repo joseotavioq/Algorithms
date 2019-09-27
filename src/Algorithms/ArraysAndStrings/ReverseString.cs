@@ -2,14 +2,14 @@
 using System.Linq;
 using BenchmarkDotNet.Attributes;
 
-namespace Algorithms
+namespace Algorithms.ArraysAndStrings
 {
     [MemoryDiagnoser]
-    public class ArraysAndStrings
+    public class ReverseString
     {
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         [Arguments("Learning Algorithms")]
-        public string ReverseString(string myEntireString)
+        public string FirstTry(string myEntireString)
         {
             StringBuilder reversedString = new StringBuilder(myEntireString.Length);
 
@@ -21,21 +21,21 @@ namespace Algorithms
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
-        public string ReverseString_OneLine(string myEntireString)
+        public string InJustOneLine(string myEntireString)
         {
             return string.Join("", myEntireString.ToCharArray().Reverse());
         }
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
-        public string ReverseString_OneLine1(string myEntireString)
+        public string InJustOneLine2(string myEntireString)
         {
             return new string(myEntireString.Reverse().ToArray());
         }
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
-        public string ReverseString_Fast(string myEntireString)
+        public string Fast(string myEntireString)
         {
             int halfSize = myEntireString.Length / 2;
 
@@ -55,7 +55,7 @@ namespace Algorithms
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
-        public string ReverseString_FastVafzamora1(string myEntireString)
+        public string Vafzamora_Fast1(string myEntireString)
         {
 
             char[] reversedArray = myEntireString.ToCharArray();
@@ -73,7 +73,7 @@ namespace Algorithms
 
         [Benchmark]
         [Arguments("Learning Algorithms")]
-        public string ReverseString_FastVafzamora2(string myEntireString)
+        public string Vafzamora_Fast2(string myEntireString)
         {
 
             char[] reversedArray = new char[myEntireString.Length];

@@ -1,7 +1,7 @@
-﻿using Algorithms;
+﻿using Algorithms.ArraysAndStrings;
 using Xunit;
 
-namespace AlgorithmsTest
+namespace AlgorithmsTest.ArraysAndStrings
 {
     public class ArraysAndStringsTest
     {
@@ -10,7 +10,7 @@ namespace AlgorithmsTest
         {
             string myEntireString = "Learning Algorithms!";
 
-            string returnedValue = new ArraysAndStrings().ReverseString(myEntireString);
+            string returnedValue = new ReverseString().FirstTry(myEntireString);
 
             Assert.Equal("!smhtiroglA gninraeL", returnedValue);
         }
@@ -20,7 +20,17 @@ namespace AlgorithmsTest
         {
             string myEntireString = "Learning Algorithms!";
 
-            string returnedValue = new ArraysAndStrings().ReverseString_OneLine(myEntireString);
+            string returnedValue = new ReverseString().InJustOneLine(myEntireString);
+
+            Assert.Equal("!smhtiroglA gninraeL", returnedValue);
+        }
+
+        [Fact]
+        public void Reverse_The_Entire_String_OneLine2()
+        {
+            string myEntireString = "Learning Algorithms!";
+
+            string returnedValue = new ReverseString().InJustOneLine2(myEntireString);
 
             Assert.Equal("!smhtiroglA gninraeL", returnedValue);
         }
@@ -30,7 +40,7 @@ namespace AlgorithmsTest
         {
             string myEntireString = "Learning Algorithms";
 
-            string returnedValue = new ArraysAndStrings().ReverseString_Fast(myEntireString);
+            string returnedValue = new ReverseString().Fast(myEntireString);
 
             Assert.Equal("smhtiroglA gninraeL", returnedValue);
         }
@@ -40,7 +50,7 @@ namespace AlgorithmsTest
         {
             string myEntireString = "Learning Algorithms!";
 
-            string returnedValue = new ArraysAndStrings().ReverseString_Fast(myEntireString);
+            string returnedValue = new ReverseString().Fast(myEntireString);
 
             Assert.Equal("!smhtiroglA gninraeL", returnedValue);
         }
