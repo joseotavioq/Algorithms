@@ -8,6 +8,8 @@ namespace Algorithms.ArraysAndStrings
     [MemoryDiagnoser]
     public class TwoSum
     {
+        //Time: O(n)
+        //Space: O(1)
         [Benchmark(Baseline = true)]
         [Arguments(new int[] { 0, 1, 2, 7, 11, 15 }, 9)]
         public int[] FirstTry(int[] nums, int target)
@@ -28,6 +30,8 @@ namespace Algorithms.ArraysAndStrings
             return null;
         }
 
+        //Time: O(n)
+        //Space: O(1)
         [Benchmark]
         [Arguments(new int[] { 0, 1, 2, 7, 11, 15 }, 9)]
         public int[] SecondTry(int[] nums, int target)
@@ -58,6 +62,8 @@ namespace Algorithms.ArraysAndStrings
             return null;
         }
 
+        //Time: O(n)
+        //Space: O(n)
         [Benchmark]
         [Arguments(new int[] { 0, 1, 2, 7, 11, 15 }, 9)]
         public int[] ThirdTry(int[] nums, int target)

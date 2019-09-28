@@ -7,7 +7,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<TwoSum>();
+            var summary = BenchmarkRunner.Run<IsUnique>();
         }
     }
 }

@@ -8,6 +8,8 @@ namespace Algorithms.ArraysAndStrings
     [MemoryDiagnoser]
     public class MergeSortedArray
     {
+        //Time: O(n + m)
+        //Space: O(n + m)
         [Benchmark(Baseline = true)]
         [Arguments(new int[] { 0, 3, 4, 31 }, new int[] { 4, 6, 30 })]
         public int[] FirstTry(int[] firstArray, int[] secondArray)
@@ -56,7 +58,8 @@ namespace Algorithms.ArraysAndStrings
             return mergedSortedArray;
         }
 
-
+        //Time: O(n + m)
+        //Space: O(n + m)
         [Benchmark]
         [Arguments(new int[] { 0, 3, 4, 31 }, new int[] { 4, 6, 30 })]
         public int[] SecondTry(int[] firstArray, int[] secondArray)

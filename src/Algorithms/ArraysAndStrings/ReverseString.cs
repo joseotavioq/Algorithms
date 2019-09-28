@@ -9,6 +9,8 @@ namespace Algorithms.ArraysAndStrings
     {
         private const string INPUT = "Learning Algorithms";
 
+        //Time: O(n)
+        //Space: O(n)
         [Benchmark(Baseline = true)]
         [Arguments(INPUT)]
         public string FirstTry(string myEntireString)
@@ -21,6 +23,8 @@ namespace Algorithms.ArraysAndStrings
             return reversedString.ToString();
         }
 
+        //Time: O(n)
+        //Space: O(n)
         [Benchmark]
         [Arguments(INPUT)]
         public string InJustOneLine(string myEntireString)
@@ -28,6 +32,8 @@ namespace Algorithms.ArraysAndStrings
             return string.Join("", myEntireString.ToCharArray().Reverse());
         }
 
+        //Time: O(n)
+        //Space: O(n)
         [Benchmark]
         [Arguments(INPUT)]
         public string InJustOneLine2(string myEntireString)
@@ -35,6 +41,8 @@ namespace Algorithms.ArraysAndStrings
             return new string(myEntireString.Reverse().ToArray());
         }
 
+        //Time: O(n/2)
+        //Space: O(n)
         [Benchmark]
         [Arguments(INPUT)]
         public string Fast(string myEntireString)

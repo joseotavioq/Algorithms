@@ -29,3 +29,10 @@ My study about algorithms.
 |  FirstTry | Array[6] |      9 |  12.86 ns | 0.3357 ns | 0.7155 ns |  1.00 |    0.00 | 0.0076 |     - |     - |      32 B |
 | SecondTry | Array[6] |      9 |  13.79 ns | 0.3454 ns | 0.3392 ns |  1.03 |    0.05 | 0.0076 |     - |     - |      32 B |
 |  ThirdTry | Array[6] |      9 | 111.18 ns | 2.2023 ns | 1.9523 ns |  8.34 |    0.41 | 0.0533 |     - |     - |     224 B |
+
+### Is Unique - [File](src/Algorithms/ArraysAndStrings/IsUnique.cs)
+
+|    Method |    value |      Mean |     Error |     StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |--------- |----------:|----------:|-----------:|------:|-------:|------:|------:|----------:|
+|  FirstTry | abcdefgh | 335.90 ns | 6.7666 ns | 13.0370 ns |  1.00 | 0.1578 |     - |     - |     664 B |
+| SecondTry | abcdefgh |  17.65 ns | 0.3643 ns |  0.3408 ns |  0.05 | 0.0362 |     - |     - |     152 B |
