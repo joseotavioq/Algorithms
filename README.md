@@ -36,3 +36,9 @@ My study about algorithms.
 |---------- |--------- |----------:|----------:|-----------:|------:|-------:|------:|------:|----------:|
 |  FirstTry | abcdefgh | 335.90 ns | 6.7666 ns | 13.0370 ns |  1.00 | 0.1578 |     - |     - |     664 B |
 | SecondTry | abcdefgh |  17.65 ns | 0.3643 ns |  0.3408 ns |  0.05 | 0.0362 |     - |     - |     152 B |
+
+### Check Permutation - [File](src/Algorithms/ArraysAndStrings/CheckPermutation.cs)
+
+|   Method |    first |   second |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------- |--------- |--------- |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
+| FirstTry | abcdefgh | fdceagbh | 48.38 ns | 0.9950 ns | 0.9307 ns |  1.00 | 0.1277 |     - |     - |     536 B |

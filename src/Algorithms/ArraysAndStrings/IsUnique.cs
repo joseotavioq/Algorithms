@@ -1,7 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Algorithms.ArraysAndStrings
 {
@@ -33,7 +31,7 @@ namespace Algorithms.ArraysAndStrings
         [Arguments("abcdefgh")]
         public bool SecondTry(string value)
         {
-            //Assuming that the parameters is an ASCII string
+            //Assuming the parameter is ASCII
             bool[] asciiTable = new bool[128];
 
             for (int i = 0; i < value.Length; i++)
