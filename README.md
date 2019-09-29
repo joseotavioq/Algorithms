@@ -42,3 +42,9 @@ My study about algorithms.
 |   Method |    first |   second |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |--------- |--------- |--------- |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
 | FirstTry | abcdefgh | fdceagbh | 48.38 ns | 0.9950 ns | 0.9307 ns |  1.00 | 0.1277 |     - |     - |     536 B |
+
+### URLify - [File](src/Algorithms/ArraysAndStrings/URLify.cs)
+
+|   Method |             value |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------- |------------------ |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
+| FirstTry | Mr John Smith     | 39.30 ns | 0.8481 ns | 0.8710 ns |  1.00 | 0.0305 |     - |     - |     128 B |
