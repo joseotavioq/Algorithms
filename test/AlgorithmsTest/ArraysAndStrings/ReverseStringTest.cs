@@ -6,7 +6,7 @@ namespace AlgorithmsTest.ArraysAndStrings
     public class ArraysAndStringsTest
     {
         [Fact]
-        public void Reverse_The_Entire_String()
+        public void FirstTry_Reverse_The_String()
         {
             string myEntireString = "Learning Algorithms!";
 
@@ -16,7 +16,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Reverse_The_Entire_String_OneLine()
+        public void InJustOneLine_Reverse_The_String()
         {
             string myEntireString = "Learning Algorithms!";
 
@@ -26,7 +26,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Reverse_The_Entire_String_OneLine2()
+        public void InJustOneLine2_Reverse_The_String()
         {
             string myEntireString = "Learning Algorithms!";
 
@@ -36,7 +36,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Reverse_The_Entire_String_Fast_With_Odd()
+        public void Fast_With_Odd_Parameter_Qty()
         {
             string myEntireString = "Learning Algorithms";
 
@@ -46,7 +46,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Reverse_The_Entire_String_Fast_With_Even()
+        public void Fast_With_Even_Parameter_Qty()
         {
             string myEntireString = "Learning Algorithms!";
 

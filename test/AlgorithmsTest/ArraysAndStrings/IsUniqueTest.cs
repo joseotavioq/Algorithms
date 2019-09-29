@@ -6,7 +6,7 @@ namespace AlgorithmsTest.ArraysAndStrings
     public class IsUniqueTest
     {
         [Fact]
-        public void The_String_Has_All_Unique_Characters_First_True()
+        public void FirstTry_The_String_Has_All_Unique_Characters()
         {
             string myString = "abcdefgh";
 
@@ -16,7 +16,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void The_String_Has_All_Unique_Characters_First_False()
+        public void FirstTry_The_String_Has_A_Duplicate_Character()
         {
             string myString = "abcdebfgh";
 
@@ -26,7 +26,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void The_String_Has_All_Unique_Characters_Second_True()
+        public void SecondTry_The_String_Has_All_Unique_Characters()
         {
             string myString = "abcdefgh";
 
@@ -36,7 +36,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void The_String_Has_All_Unique_Characters_Second_False()
+        public void SecondTry_The_String_Has_A_Duplicate_Character()
         {
             string myString = "abcdebfgh";
 

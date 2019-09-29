@@ -6,7 +6,7 @@ namespace AlgorithmsTest.ArraysAndStrings
     public class TwoSumTest
     {
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_First()
+        public void FirstTry_Sum_Of_Two_Nums_Are_Equal_To_Target()
         {
             int[] nums = new int[] { 2, 7, 11, 15 };
             int target = 9;
@@ -17,7 +17,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_First_Unordered()
+        public void FirstTry_With_Unordered_Parameter()
         {
             int[] nums = new int[] { 0, 4, 3, 0 };
             int target = 0;
@@ -28,7 +28,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_First_Another_Parameter()
+        public void FirstTry_Sum_Of_Two_Nums_Are_Equal_To_Target_With_Other_Values()
         {
             int[] nums = new int[] { 0, 1, 2, 7, 11, 15 };
             int target = 9;
@@ -39,7 +39,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_First_When_Does_Not_Have_A_Match()
+        public void FirstTry_When_Does_Not_Have_A_Match()
         {
             int[] nums = new int[] { 0, 1, 2, 5, 11, 15 };
             int target = 9;
@@ -50,7 +50,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Null_First_When_Passing_Null_Array()
+        public void FirstTry_When_Passing_Null_Array()
         {
             int[] nums = null;
             int target = 9;
@@ -60,9 +60,8 @@ namespace AlgorithmsTest.ArraysAndStrings
             Assert.Null(result);
         }
 
-
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Null_First_When_Passing_Less_Than_Two_Items()
+        public void FirstTry_When_Passing_Less_Than_Two_Items()
         {
             int[] nums = new int[] { 9 };
             int target = 9;
@@ -73,7 +72,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Second()
+        public void SecondTry_Sum_Of_Two_Nums_Are_Equal_To_Target()
         {
             int[] nums = new int[] { 2, 7, 11, 15 };
             int target = 9;
@@ -84,7 +83,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Second_Unordered()
+        public void SecondTry_With_Unordered_Parameter()
         {
             int[] nums = new int[] { 0, 4, 3, 0 };
             int target = 0;
@@ -95,7 +94,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Second_Another_Parameter()
+        public void SecondTry_Sum_Of_Two_Nums_Are_Equal_To_Target_With_Other_Values()
         {
             int[] nums = new int[] { 0, 1, 2, 7, 11, 15 };
             int target = 9;
@@ -106,7 +105,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Second_When_Does_Not_Have_A_Match()
+        public void SecondTry_When_Does_Not_Have_A_Match()
         {
             int[] nums = new int[] { 0, 1, 2, 5, 11, 15 };
             int target = 9;
@@ -117,7 +116,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Null_Second_When_Passing_Null_Array()
+        public void SecondTry_When_Passing_Null_Array()
         {
             int[] nums = null;
             int target = 9;
@@ -127,9 +126,8 @@ namespace AlgorithmsTest.ArraysAndStrings
             Assert.Null(result);
         }
 
-
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Null_Second_When_Passing_Less_Than_Two_Items()
+        public void SecondTry_When_Passing_Less_Than_Two_Items()
         {
             int[] nums = new int[] { 9 };
             int target = 9;
@@ -140,7 +138,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Third()
+        public void ThirdTry_Sum_Of_Two_Nums_Are_Equal_To_Target()
         {
             int[] nums = new int[] { 2, 7, 11, 15 };
             int target = 9;
@@ -151,7 +149,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Third_Unordered()
+        public void ThirdTry_With_Unordered_Parameter()
         {
             int[] nums = new int[] { 0, 4, 3, 0 };
             int target = 0;
@@ -162,7 +160,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Third_Another_Parameter()
+        public void ThirdTry_Sum_Of_Two_Nums_Are_Equal_To_Target_With_Other_Values()
         {
             int[] nums = new int[] { 0, 1, 2, 7, 11, 15 };
             int target = 9;
@@ -173,7 +171,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Target_Third_When_Does_Not_Have_A_Match()
+        public void ThirdTry_When_Does_Not_Have_A_Match()
         {
             int[] nums = new int[] { 0, 1, 2, 5, 11, 15 };
             int target = 9;
@@ -184,7 +182,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Null_Third_When_Passing_Null_Array()
+        public void ThirdTry_When_Passing_Null_Array()
         {
             int[] nums = null;
             int target = 9;
@@ -196,7 +194,7 @@ namespace AlgorithmsTest.ArraysAndStrings
 
 
         [Fact]
-        public void Sum_Of_Two_Nums_Are_Equal_To_Null_Third_When_Passing_Less_Than_Two_Items()
+        public void ThirdTry_When_Passing_Less_Than_Two_Items()
         {
             int[] nums = new int[] { 9 };
             int target = 9;

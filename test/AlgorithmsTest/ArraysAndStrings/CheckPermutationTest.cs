@@ -17,7 +17,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void FirstTry_One_String_Is_Not_Permutation_Of_The_Other_Because_Has_a_Different_Char()
+        public void FirstTry_One_String_Is_Not_Permutation_Of_The_Other_Because_Contains_a_Different_Char()
         {
             string first = "abcdefgh";
             string second = "fdcmagbh";
