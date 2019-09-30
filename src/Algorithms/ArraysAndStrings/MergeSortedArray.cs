@@ -8,7 +8,7 @@ namespace Algorithms.ArraysAndStrings
         //Time: O(n + m)
         //Space: O(n + m)
         [Benchmark(Baseline = true)]
-        [Arguments(new int[] { 0, 3, 4, 15 }, new int[] { 4, 6, 18, 30, 31, 35, 36, 44})]
+        [Arguments(new int[] { 0, 3, 4, 15 }, new int[] { 4, 6, 18, 30, 31, 35, 36, 44 })]
         public int[] FirstTry(int[] firstArray, int[] secondArray)
         {
             if (firstArray.Length == 0)
@@ -58,7 +58,7 @@ namespace Algorithms.ArraysAndStrings
         //Time: O(n + m)
         //Space: O(n + m)
         [Benchmark]
-        [Arguments(new int[] { 0, 3, 4, 15 }, new int[] { 4, 6, 18, 30, 31, 35, 36, 44})]
+        [Arguments(new int[] { 0, 3, 4, 15 }, new int[] { 4, 6, 18, 30, 31, 35, 36, 44 })]
         public int[] SecondTry(int[] firstArray, int[] secondArray)
         {
             if (firstArray.Length == 0)
@@ -100,9 +100,11 @@ namespace Algorithms.ArraysAndStrings
 
             return mergedSortedArray;
         }
+
         [Benchmark]
-        [Arguments(new int[] { 0, 3, 4, 15 }, new int[] { 4, 6, 18, 30, 31, 35, 36, 44})]
-        public int[] MyTry_VZamora(int[] firstArray, int[] secondArray) {
+        [Arguments(new int[] { 0, 3, 4, 15 }, new int[] { 4, 6, 18, 30, 31, 35, 36, 44 })]
+        public int[] MyTry_VZamora(int[] firstArray, int[] secondArray)
+        {
             if (firstArray.Length == 0)
                 return secondArray;
 
@@ -110,14 +112,18 @@ namespace Algorithms.ArraysAndStrings
                 return firstArray;
 
             int[] mergedSortedArray = new int[firstArray.Length + secondArray.Length];
-            int i=0, j=0, k=0;
+            int i = 0, j = 0, k = 0;
             int input1 = firstArray[i], input2 = secondArray[j];
 
-            while (k < mergedSortedArray.Length) {
-                if (input1 < input2) {
+            while (k < mergedSortedArray.Length)
+            {
+                if (input1 < input2)
+                {
                     mergedSortedArray[k++] = input1;
                     input1 = ++i < firstArray.Length ? firstArray[i] : int.MaxValue;
-                } else {
+                }
+                else
+                {
                     mergedSortedArray[k++] = input2;
                     input2 = ++j < secondArray.Length ? secondArray[j] : int.MaxValue;
                 }

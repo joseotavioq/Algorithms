@@ -17,10 +17,11 @@ My study about algorithms.
 
 ### Merge Sorted Array - [File](src/Algorithms/ArraysAndStrings/MergeSortedArray.cs)
 
-|    Method | firstArray | secondArray |     Mean |     Error |    StdDev |   Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|---------- |----------- |------------ |---------:|----------:|----------:|---------:|------:|--------:|-------:|------:|------:|----------:|
-|  FirstTry |   Array[4] |    Array[3] | 17.03 ns | 0.3484 ns | 0.3259 ns | 17.04 ns |  1.00 |    0.00 | 0.0133 |     - |     - |      56 B |
-| SecondTry |   Array[4] |    Array[3] | 16.59 ns | 0.4111 ns | 0.7201 ns | 16.27 ns |  1.00 |    0.06 | 0.0133 |     - |     - |      56 B |
+|        Method | firstArray | secondArray |     Mean |     Error |    StdDev | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|-------------- |----------- |------------ |---------:|----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
+|      FirstTry |   Array[4] |    Array[8] | 24.96 ns | 0.5753 ns | 0.5381 ns |  1.00 |    0.00 | 0.0171 |     - |     - |      72 B |
+|     SecondTry |   Array[4] |    Array[8] | 25.11 ns | 0.9701 ns | 2.7202 ns |  0.96 |    0.07 | 0.0171 |     - |     - |      72 B |
+| MyTry_VZamora |   Array[4] |    Array[8] | 35.78 ns | 0.8161 ns | 1.0612 ns |  1.45 |    0.06 | 0.0171 |     - |     - |      72 B |
 
 ### Two Sum - [File](src/Algorithms/ArraysAndStrings/TwoSum.cs)
 
