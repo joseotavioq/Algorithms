@@ -7,7 +7,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<MergeSortedArray>();
+            var summary = BenchmarkRunner.Run<URLify>();
         }
     }
 }

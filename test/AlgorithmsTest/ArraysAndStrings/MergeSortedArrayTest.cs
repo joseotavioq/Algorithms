@@ -6,7 +6,7 @@ namespace AlgorithmsTest.ArraysAndStrings
     public class MergeSortedArrayTest
     {
         [Fact]
-        public void Merge_Two_Sorted_Arrays_First()
+        public void FirstTry_Merged_Two_Sorted_Arrays()
         {
             int[] x = new int[] { 0, 3, 4, 31, 44, 49 };
             int[] y = new int[] { 4, 6, 29, 30 };
@@ -17,7 +17,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_First_Inverted()
+        public void FirstTry_Merged_Two_Sorted_Arrays_Inverting_The_Parameters()
         {
             int[] x = new int[] { 4, 6, 29, 30 };
             int[] y = new int[] { 0, 3, 4, 31, 44, 49 };
@@ -28,7 +28,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_First_With_First_Param_Empty()
+        public void FirstTry_First_Parameter_Is_Empty()
         {
             int[] x = new int[0];
             int[] y = new int[] { 4, 6, 29, 30 };
@@ -39,7 +39,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_First_With_Second_Param_Empty()
+        public void FirstTry_Second_Parameter_Is_Empty()
         {
             int[] x = new int[] { 0, 3, 4, 31, 44, 49 };
             int[] y = new int[0];
@@ -50,7 +50,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_Second()
+        public void SecondTry_Merged_Two_Sorted_Arrays()
         {
             int[] x = new int[] { 0, 3, 4, 31, 44, 49 };
             int[] y = new int[] { 4, 6, 29, 30 };
@@ -61,7 +61,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_Second_Inverted()
+        public void SecondTry_Merged_Two_Sorted_Arrays_Inverting_The_Parameters()
         {
             int[] x = new int[] { 4, 6, 29, 30 };
             int[] y = new int[] { 0, 3, 4, 31, 44, 49 };
@@ -72,7 +72,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_Second_With_First_Param_Empty()
+        public void SecondTry_First_Parameter_Is_Empty()
         {
             int[] x = new int[0];
             int[] y = new int[] { 4, 6, 29, 30 };
@@ -83,7 +83,7 @@ namespace AlgorithmsTest.ArraysAndStrings
         }
 
         [Fact]
-        public void Merge_Two_Sorted_Arrays_Second_With_Second_Param_Empty()
+        public void SecondTry_Second_Parameter_Is_Empty()
         {
             int[] x = new int[] { 0, 3, 4, 31, 44, 49 };
             int[] y = new int[0];
