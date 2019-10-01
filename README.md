@@ -49,3 +49,10 @@ My study about algorithms.
 |   Method |             value |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |--------- |------------------ |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
 | FirstTry | Mr John Smith     | 39.30 ns | 0.8481 ns | 0.8710 ns |  1.00 | 0.0305 |     - |     - |     128 B |
+
+### One Away - [File](src/Algorithms/ArraysAndStrings/OneAway.cs)
+
+|   Method | first | second |       Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------- |------ |------- |-----------:|----------:|----------:|------:|-------:|------:|------:|----------:|
+| FirstTry |  pale |    bae | 151.289 ns | 3.0154 ns | 2.9615 ns |  1.00 | 0.1276 |     - |     - |     536 B |
+|     Fast |  pale |    bae |   3.833 ns | 0.0825 ns | 0.0732 ns |  0.03 |      - |     - |     - |         - |
