@@ -2,6 +2,10 @@
 
 namespace Algorithms.ArraysAndStrings
 {
+    /// <summary>
+    /// Given two strings, write a method to decide if one is a permutation
+    /// of the other.
+    /// </summary>
     [MemoryDiagnoser]
     public class CheckPermutation
     {

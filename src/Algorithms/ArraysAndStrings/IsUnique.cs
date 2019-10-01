@@ -3,6 +3,10 @@ using System.Collections.Generic;
 
 namespace Algorithms.ArraysAndStrings
 {
+    /// <summary>
+    /// Implement an algorithm to determine if a string has all unique characters.
+    /// What if you cannot use additional data structures.
+    /// </summary>
     [MemoryDiagnoser]
     public class IsUnique
     {
