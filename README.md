@@ -56,3 +56,11 @@ My study about algorithms.
 |--------- |------ |------- |-----------:|----------:|----------:|------:|-------:|------:|------:|----------:|
 | FirstTry |  pale |    bae | 151.289 ns | 3.0154 ns | 2.9615 ns |  1.00 | 0.1276 |     - |     - |     536 B |
 |     Fast |  pale |    bae |   3.833 ns | 0.0825 ns | 0.0732 ns |  0.03 |      - |     - |     - |         - |
+
+### String Compression - [File](src/Algorithms/ArraysAndStrings/StringCompression.cs)
+
+|    Method |       value |     Mean |     Error |   StdDev |   Median | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |------------ |---------:|----------:|---------:|---------:|------:|-------:|------:|------:|----------:|
+|  FirstTry | aabcccccaaa | 616.8 ns | 11.585 ns | 9.674 ns | 616.2 ns |  1.00 | 0.1402 |     - |     - |     592 B |
+| SecondTry | aabcccccaaa | 155.0 ns |  3.044 ns | 3.738 ns | 156.4 ns |  0.25 | 0.0341 |     - |     - |     144 B |
+|  ThirdTry | aabcccccaaa | 162.9 ns |  3.297 ns | 6.954 ns | 160.1 ns |  0.28 | 0.0341 |     - |     - |     144 B |
