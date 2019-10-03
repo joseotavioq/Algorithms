@@ -1,4 +1,5 @@
 ﻿using BenchmarkDotNet.Attributes;
+using System.Collections;
 using System.Collections.Generic;
 
 namespace Algorithms.ArraysAndStrings
@@ -48,6 +49,20 @@ namespace Algorithms.ArraysAndStrings
                 asciiTable[charInNumber] = true;
             }
 
+            return true;
+        }
+
+        [Benchmark]
+        [Arguments("abcdefgh")]
+        public bool MyTry_Vafzmora(string value) {
+            //Assuming the parameter is < 128 because every char in CLR is f#ckin' Unicode
+            BitArray asciiTable = new BitArray(128);
+
+            for (int i = 0; i < value.Length; i++) {
+                if (asciiTable[value[i]])
+                    return false;
+                asciiTable[value[i]] = true;
+            }
             return true;
         }
     }
