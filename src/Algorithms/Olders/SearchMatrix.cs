@@ -1,4 +1,4 @@
-namespace Algorithms
+namespace Algorithms.Olders
 {
     public class SearchMatrix
     {

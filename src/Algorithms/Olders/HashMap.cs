@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace Algorithms
+namespace Algorithms.Olders
 {
     public static class HashMap
     {

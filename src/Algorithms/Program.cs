@@ -1,4 +1,4 @@
-﻿using Algorithms.ArraysAndStrings;
+﻿using Algorithms.HashTables;
 using BenchmarkDotNet.Running;
 
 namespace Algorithms
@@ -7,7 +7,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<StringCompression>();
+            var summary = BenchmarkRunner.Run<RecurringNumber>();
         }
     }
 }

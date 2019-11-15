@@ -1,7 +1,8 @@
 using Algorithms;
+using Algorithms.Olders;
 using Xunit;
 
-namespace AlgorithmsTest
+namespace AlgorithmsTest.Olders
 {
     public class SearchArraysTest
     {
