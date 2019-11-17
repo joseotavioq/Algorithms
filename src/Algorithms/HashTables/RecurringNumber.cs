@@ -8,7 +8,9 @@ namespace Algorithms.HashTables
 {
     [MemoryDiagnoser]
     public class RecurringNumber
-    {
+    {  
+        //Time: O(n^2)
+        //Space: O(1)
         [Benchmark(Baseline = true)]
         [Arguments(new int[] { 2, 3, 1, 5, 2, 4, 1 })]
         [Arguments(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 25, 14 })]
@@ -27,6 +29,8 @@ namespace Algorithms.HashTables
             return -1;
         }
 
+        //Time: O(n)
+        //Space: O(n)
         [Benchmark]
         [Arguments(new int[] { 2, 3, 1, 5, 2, 4, 1 })]
         [Arguments(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 25, 25, 14 })]
