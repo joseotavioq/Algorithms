@@ -8,7 +8,7 @@ namespace Algorithms.HashTables
 {
     [MemoryDiagnoser]
     public class RecurringNumber
-    {  
+    {
         //Time: O(n^2)
         //Space: O(1)
         [Benchmark(Baseline = true)]
@@ -21,8 +21,9 @@ namespace Algorithms.HashTables
             {
                 for (int j = i + 1; j < numbers.Length; j++)
                 {
-                    if (numbers[i] == numbers[j])
-                        return numbers[i];
+                    if (numbers[i] == numbers[j]
+                        || (j + 1 < numbers.Length && numbers[j] == numbers[j + 1]))
+                        return numbers[j];
                 }
             }
 
