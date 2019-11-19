@@ -52,16 +52,12 @@
             else
             {
                 var current = _data[hash];
-                while (current != null)
+                while (current.Next != null)
                 {
-                    if (current.Next == null)
-                    {
-                        current.Next = new Node<T>(key, value);
-                        break;
-                    }
-
                     current = current.Next;
                 }
+
+                current.Next = new Node<T>(key, value);
             }
         }
     }
