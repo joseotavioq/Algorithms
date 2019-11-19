@@ -1,4 +1,6 @@
-﻿using Algorithms.HashTables;
+﻿using Algorithms.ArraysAndStrings;
+using Algorithms.HashTables;
+using Algorithms.LinkedLists;
 using BenchmarkDotNet.Running;
 
 namespace Algorithms
@@ -7,7 +9,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<ContainsCommonItem>();
+            var summary = BenchmarkRunner.Run<RemoveDups>();
         }
     }
 }

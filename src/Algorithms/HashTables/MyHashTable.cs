@@ -2,11 +2,11 @@
 {
     public class MyHashTable<T>
     {
-        private readonly Node<T>[] _data;
+        private readonly HashTableNode<T>[] _data;
 
         public MyHashTable(int size)
         {
-            _data = new Node<T>[size];
+            _data = new HashTableNode<T>[size];
         }
 
         private int generateHash(string key)
@@ -48,7 +48,7 @@
         private void setOnBucket(int hash, string key, T value)
         {
             if (_data[hash] == null)
-                _data[hash] = new Node<T>(key, value);
+                _data[hash] = new HashTableNode<T>(key, value);
             else
             {
                 var current = _data[hash];
@@ -57,14 +57,14 @@
                     current = current.Next;
                 }
 
-                current.Next = new Node<T>(key, value);
+                current.Next = new HashTableNode<T>(key, value);
             }
         }
     }
 
-    public class Node<T>
+    public class HashTableNode<T>
     {
-        public Node(string key, T value)
+        public HashTableNode(string key, T value)
         {
             Key = key;
             Value = value;
@@ -73,6 +73,6 @@
 
         public T Value { get; private set; }
         public string Key { get; private set; }
-        public Node<T> Next { get; set; }
+        public HashTableNode<T> Next { get; set; }
     }
 }
