@@ -40,7 +40,7 @@
 
             while (current != null)
             {
-                //previous element
+                //get previous element
                 if (i == index - 1)
                 {
                     previous = current;
@@ -56,6 +56,39 @@
                         previous.Next = newNode;
 
                     Length++;
+                    break;
+                }
+
+                current = current.Next;
+                i++;
+            }
+        }
+
+        public void Remove(int index)
+        {
+            int i = 0;
+            Node<T> current = Head;
+            Node<T> previous = null;
+
+            while (current != null)
+            {
+                //get previous element
+                if (i == index - 1)
+                {
+                    previous = current;
+                }
+                else if (i == index) //remove the element
+                {
+                    if (previous == null)
+                        Head = current.Next;
+                    else
+                    {
+                        previous.Next = current.Next;
+                        if (current.Next == null)
+                            Tail = previous;
+                    }
+
+                    Length--;
                     break;
                 }
 

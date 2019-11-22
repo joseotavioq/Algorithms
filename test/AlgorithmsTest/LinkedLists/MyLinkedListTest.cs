@@ -110,5 +110,53 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(16, myLinkedList.Tail.Value);
             Assert.Equal(4, myLinkedList.Length);
         }
+
+        [Fact]
+        public void Remove_An_Element_At_Index_1_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            myLinkedList.Remove(1);
+
+            Assert.Equal(10, myLinkedList.Head.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next);
+            Assert.Equal(16, myLinkedList.Tail.Value);
+            Assert.Equal(2, myLinkedList.Length);
+        }
+
+        [Fact]
+        public void Remove_An_Element_At_Index_0_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            myLinkedList.Remove(0);
+
+            Assert.Equal(5, myLinkedList.Head.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next);
+            Assert.Equal(16, myLinkedList.Tail.Value);
+            Assert.Equal(2, myLinkedList.Length);
+        }
+
+        [Fact]
+        public void Remove_Last_Element_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            myLinkedList.Remove(2);
+
+            Assert.Equal(10, myLinkedList.Head.Value);
+            Assert.Equal(5,  myLinkedList.Head.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next);
+            Assert.Equal(5, myLinkedList.Tail.Value);
+            Assert.Equal(2, myLinkedList.Length);
+        }
     }
 }
