@@ -24,5 +24,13 @@ namespace Algorithms.LinkedLists
             Tail = newNode;
             Length++;
         }
+
+        public void Prepend(T value)
+        {
+            var newNode = new Node<T>(value);
+            newNode.Next = Head;
+            Head = newNode;
+            Length++;
+        }
     }
 }

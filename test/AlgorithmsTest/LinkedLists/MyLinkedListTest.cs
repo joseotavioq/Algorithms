@@ -45,5 +45,34 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(16, myLinkedList.Tail.Value);
             Assert.Equal(3, myLinkedList.Length);
         }
+
+        [Fact]
+        public void Prepend_An_Element_In_A_New_MyLinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+
+            myLinkedList.Prepend(1);
+
+            Assert.Equal(1, myLinkedList.Head.Value);
+            Assert.NotNull(myLinkedList.Head.Next);
+            Assert.Equal(10, myLinkedList.Head.Next.Value);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Equal(2, myLinkedList.Length);
+        }
+
+        [Fact]
+        public void Prepend_Two_Elements_In_A_New_MyLinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+
+            myLinkedList.Prepend(1);
+            myLinkedList.Prepend(2);
+
+            Assert.Equal(2, myLinkedList.Head.Value);
+            Assert.Equal(1, myLinkedList.Head.Next.Value);
+            Assert.Equal(10, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Equal(3, myLinkedList.Length);
+        }
     }
 }
