@@ -121,7 +121,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.InsertAt(3, 99);
 
             Assert.Equal(10, myLinkedList.Head.Value);
-            Assert.Equal(5,  myLinkedList.Head.Next.Value);
+            Assert.Equal(5, myLinkedList.Head.Next.Value);
             Assert.Equal(16, myLinkedList.Head.Next.Next.Value);
             Assert.Equal(99, myLinkedList.Head.Next.Next.Next.Value);
             Assert.Null(myLinkedList.Head.Next.Next.Next.Next);
@@ -171,10 +171,36 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.RemoveAt(2);
 
             Assert.Equal(10, myLinkedList.Head.Value);
-            Assert.Equal(5,  myLinkedList.Head.Next.Value);
+            Assert.Equal(5, myLinkedList.Head.Next.Value);
             Assert.Null(myLinkedList.Head.Next.Next);
             Assert.Equal(5, myLinkedList.Tail.Value);
             Assert.Equal(2, myLinkedList.Length);
+        }
+
+        [Fact]
+        public void Get_An_Element_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var node = myLinkedList.GetAt(1);
+
+            Assert.Equal(5, node.Value);
+            Assert.Equal(16, node.Next.Value);
+        }
+
+        [Fact]
+        public void Get_The_First_Element_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var node = myLinkedList.GetAt(0);
+
+            Assert.Equal(10, node.Value);
+            Assert.Equal(5, node.Next.Value);
         }
     }
 }

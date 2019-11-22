@@ -37,67 +37,60 @@
                 return;
             }
 
-            Node<T> current = Head;
+            var newNode = new Node<T>(value);
+
             Node<T> previous = null;
-            int i = 0;
-
-            while (current != null)
+            if (index > 0)
             {
-                //get previous element
-                if (i == index - 1)
-                {
-                    previous = current;
-                }
-                else if (i == index) //insert the element
-                {
-                    var newNode = new Node<T>(value);
-                    newNode.Next = current;
-
-                    if (previous == null)
-                        Head = newNode;
-                    else
-                        previous.Next = newNode;
-
-                    Length++;
-                    break;
-                }
-
-                current = current.Next;
-                i++;
+                previous = GetAt(index - 1); //get previous element
+                newNode.Next = previous.Next;
+                previous.Next = newNode;
             }
+            else
+            {
+                newNode.Next = Head;
+                Head = newNode;
+            }
+
+            if (newNode.Next == null)
+                Tail = newNode;
+
+            Length++;
         }
 
         public void RemoveAt(int index)
         {
+            Node<T> previous = null;
+            if (index > 0)
+            {
+                previous = GetAt(index - 1); //get previous element
+                var elementToRemove = previous.Next;
+                previous.Next = elementToRemove.Next;
+            }
+            else
+            {
+                previous = Head;
+                Head = previous.Next;
+            }
+
+            if (previous.Next == null)
+                Tail = previous;
+
+            Length--;
+        }
+
+        public Node<T> GetAt(int index)
+        {
             int i = 0;
             Node<T> current = Head;
-            Node<T> previous = null;
 
-            while (current != null)
+            while (i != index)
             {
-                //get previous element
-                if (i == index - 1)
-                {
-                    previous = current;
-                }
-                else if (i == index) //remove the element
-                {
-                    if (previous == null)
-                        Head = current.Next;
-                    else
-                    {
-                        previous.Next = current.Next;
-                        if (current.Next == null)
-                            Tail = previous;
-                    }
-
-                    Length--;
-                    break;
-                }
-
                 current = current.Next;
                 i++;
             }
+
+            return current;
         }
     }
 }
