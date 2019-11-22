@@ -24,8 +24,4 @@
   <ItemGroup>
     <ProjectReference Include="..\..\src\Algorithms\Algorithms.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="LinkedLists\" />
-  </ItemGroup>
 </Project>
