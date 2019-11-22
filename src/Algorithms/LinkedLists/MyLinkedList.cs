@@ -29,7 +29,7 @@
             Length++;
         }
 
-        public void Insert(int index, T value)
+        public void InsertAt(int index, T value)
         {
             if (index >= Length)
             {
@@ -67,7 +67,7 @@
             }
         }
 
-        public void Remove(int index)
+        public void RemoveAt(int index)
         {
             int i = 0;
             Node<T> current = Head;

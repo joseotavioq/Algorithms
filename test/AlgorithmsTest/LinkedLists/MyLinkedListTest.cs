@@ -82,7 +82,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.Append(5);
             myLinkedList.Append(16);
 
-            myLinkedList.Insert(2, 99);
+            myLinkedList.InsertAt(2, 99);
 
             Assert.Equal(10, myLinkedList.Head.Value);
             Assert.Equal(5, myLinkedList.Head.Next.Value);
@@ -100,7 +100,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.Append(5);
             myLinkedList.Append(16);
 
-            myLinkedList.Insert(0, 99);
+            myLinkedList.InsertAt(0, 99);
 
             Assert.Equal(99, myLinkedList.Head.Value);
             Assert.Equal(10, myLinkedList.Head.Next.Value);
@@ -118,7 +118,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.Append(5);
             myLinkedList.Append(16);
 
-            myLinkedList.Insert(3, 99);
+            myLinkedList.InsertAt(3, 99);
 
             Assert.Equal(10, myLinkedList.Head.Value);
             Assert.Equal(5,  myLinkedList.Head.Next.Value);
@@ -136,7 +136,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.Append(5);
             myLinkedList.Append(16);
 
-            myLinkedList.Remove(1);
+            myLinkedList.RemoveAt(1);
 
             Assert.Equal(10, myLinkedList.Head.Value);
             Assert.Equal(16, myLinkedList.Head.Next.Value);
@@ -152,7 +152,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.Append(5);
             myLinkedList.Append(16);
 
-            myLinkedList.Remove(0);
+            myLinkedList.RemoveAt(0);
 
             Assert.Equal(5, myLinkedList.Head.Value);
             Assert.Equal(16, myLinkedList.Head.Next.Value);
@@ -168,7 +168,7 @@ namespace AlgorithmsTest.LinkedLists
             myLinkedList.Append(5);
             myLinkedList.Append(16);
 
-            myLinkedList.Remove(2);
+            myLinkedList.RemoveAt(2);
 
             Assert.Equal(10, myLinkedList.Head.Value);
             Assert.Equal(5,  myLinkedList.Head.Next.Value);
