@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorithms.LinkedLists
+﻿namespace Algorithms.LinkedLists
 {
     public class MyLinkedList<T>
     {
