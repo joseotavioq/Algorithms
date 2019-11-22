@@ -227,5 +227,30 @@ namespace AlgorithmsTest.LinkedLists
 
             Assert.Null(node);
         }
+
+        [Fact]
+        public void The_LinkedList_Is_Not_Cyclic()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var isCyclic = myLinkedList.IsCyclic();
+
+            Assert.False(isCyclic);
+        }
+
+        [Fact]
+        public void The_LinkedList_Is_Cyclic()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+            myLinkedList.Tail.Next = myLinkedList.Head;
+
+            var isCyclic = myLinkedList.IsCyclic();
+
+            Assert.True(isCyclic);
+        }
     }
 }

@@ -107,5 +107,10 @@
 
             return null;
         }
+
+        public bool IsCyclic()
+        {
+            return Tail.Next != null;
+        }
     }
 }
