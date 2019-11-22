@@ -28,5 +28,40 @@
             Head = newNode;
             Length++;
         }
+
+        public void Insert(int index, T value)
+        {
+            if (index >= Length)
+                return;
+
+            Node<T> current = Head;
+            Node<T> previous = null;
+            int i = 0;
+
+            while (current != null)
+            {
+                //previous element
+                if (i == index - 1)
+                {
+                    previous = current;
+                }
+                else if (i == index) //insert the element
+                {
+                    var newNode = new Node<T>(value);
+                    newNode.Next = current;
+
+                    if (previous == null)
+                        Head = newNode;
+                    else
+                        previous.Next = newNode;
+
+                    Length++;
+                    break;
+                }
+
+                current = current.Next;
+                i++;
+            }
+        }
     }
 }
