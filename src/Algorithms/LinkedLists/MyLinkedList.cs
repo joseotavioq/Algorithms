@@ -92,5 +92,20 @@
 
             return current;
         }
+
+        public Node<T> FindNodeBy(T value)
+        {
+            Node<T> current = Head;
+
+            while (current != null)
+            {
+                if (current.Value.Equals(value))
+                    return current;
+
+                current = current.Next;
+            }
+
+            return null;
+        }
     }
 }

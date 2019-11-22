@@ -202,5 +202,30 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(10, node.Value);
             Assert.Equal(5, node.Next.Value);
         }
+
+        [Fact]
+        public void FindNode_With_Value_5_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var node = myLinkedList.FindNodeBy(5);
+
+            Assert.Equal(5, node.Value);
+            Assert.Equal(16, node.Next.Value);
+        }
+
+        [Fact]
+        public void FindNode_With_Value_99_In_An_Existing_LinkedList_Will_Return_Null()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var node = myLinkedList.FindNodeBy(99);
+
+            Assert.Null(node);
+        }
     }
 }
