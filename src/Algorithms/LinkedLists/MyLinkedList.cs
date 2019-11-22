@@ -32,7 +32,10 @@
         public void Insert(int index, T value)
         {
             if (index >= Length)
+            {
+                Append(value);
                 return;
+            }
 
             Node<T> current = Head;
             Node<T> previous = null;

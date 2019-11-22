@@ -112,6 +112,24 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
+        public void Insert_An_Element_At_The_End_Of_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            myLinkedList.Insert(3, 99);
+
+            Assert.Equal(10, myLinkedList.Head.Value);
+            Assert.Equal(5,  myLinkedList.Head.Next.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(99, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next.Next.Next);
+            Assert.Equal(99, myLinkedList.Tail.Value);
+            Assert.Equal(4, myLinkedList.Length);
+        }
+
+        [Fact]
         public void Remove_An_Element_At_Index_1_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
