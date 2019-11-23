@@ -18,17 +18,12 @@ namespace Algorithms.Stacks
 
         public void Push(T value)
         {
-            if (Top == null)
-            {
-                Top = new Node<T>(value);
+            Node<T> temp = Top;
+            Top = new Node<T>(value);
+            Top.Next = temp;
+
+            if (temp == null)
                 Bottom = Top;
-            }
-            else
-            {
-                var temp = Top;
-                Top = new Node<T>(value);
-                Top.Next = temp;
-            }
 
             Length++;
         }
