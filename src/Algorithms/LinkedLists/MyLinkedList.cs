@@ -93,6 +93,20 @@
             return current;
         }
 
+        public Node<T> GetAtToLast(int index)
+        {
+            int i = Length;
+            Node<T> current = Head;
+
+            while (i != index)
+            {
+                current = current.Next;
+                i--;
+            }
+
+            return current;
+        }
+
         public Node<T> FindNodeBy(T value)
         {
             Node<T> current = Head;

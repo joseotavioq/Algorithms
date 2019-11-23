@@ -76,7 +76,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Insert_An_Element_At_Index_2_In_An_Existing_LinkedList()
+        public void InsertAt_An_Element_At_Index_2_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -94,7 +94,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Insert_An_Element_At_Index_0_In_An_Existing_LinkedList()
+        public void InsertAt_An_Element_At_Index_0_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -112,7 +112,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Insert_An_Element_At_The_End_Of_An_Existing_LinkedList()
+        public void InsertAt_An_Element_At_The_End_Of_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -130,7 +130,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Remove_An_Element_At_Index_1_In_An_Existing_LinkedList()
+        public void RemoveAt_An_Element_At_Index_1_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -146,7 +146,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Remove_An_Element_At_Index_0_In_An_Existing_LinkedList()
+        public void RemoveAt_An_Element_At_Index_0_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -162,7 +162,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Remove_Last_Element_In_An_Existing_LinkedList()
+        public void RemoveAt_Last_Element_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -178,7 +178,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Get_An_Element_In_An_Existing_LinkedList()
+        public void GetAt_An_Element_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -191,7 +191,7 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
-        public void Get_The_First_Element_In_An_Existing_LinkedList()
+        public void GetAt_The_First_Element_In_An_Existing_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
             myLinkedList.Append(5);
@@ -201,6 +201,32 @@ namespace AlgorithmsTest.LinkedLists
 
             Assert.Equal(10, node.Value);
             Assert.Equal(5, node.Next.Value);
+        }
+
+        [Fact]
+        public void GetAtToLast_An_Element_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var node = myLinkedList.GetAtToLast(1);
+
+            Assert.Equal(16, node.Value);
+            Assert.Null(node.Next);
+        }
+
+        [Fact]
+        public void GetAtToLast_The_First_Element_In_An_Existing_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+
+            var node = myLinkedList.GetAtToLast(2);
+
+            Assert.Equal(5, node.Value);
+            Assert.Equal(16, node.Next.Value);
         }
 
         [Fact]
