@@ -380,6 +380,8 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(51, myLinkedList.Head.Next.Next.Value);
             Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Value);
             Assert.Null(myLinkedList.Head.Next.Next.Next.Next);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
         }
 
         [Fact]
@@ -399,6 +401,8 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(51, myLinkedList.Head.Next.Next.Next.Value);
             Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Next.Value);
             Assert.Null(myLinkedList.Head.Next.Next.Next.Next.Next);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
         }
 
         [Fact]
@@ -416,6 +420,8 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(51, myLinkedList.Head.Next.Next.Value);
             Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Value);
             Assert.Null(myLinkedList.Head.Next.Next.Next.Next);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
         }
 
         [Fact]
@@ -435,6 +441,8 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(51, myLinkedList.Head.Next.Next.Next.Value);
             Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Next.Value);
             Assert.Null(myLinkedList.Head.Next.Next.Next.Next.Next);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
         }
     }
 }

@@ -222,19 +222,19 @@
         {
             this.Tail = this.Head;
 
-            var first = this.Head;
-            var second = first.Next;
+            Node<T> previous = null;
+            Node<T> current = this.Head;
 
-            while (second != null)
+            while (current != null)
             {
-                var temp = second.Next;
-                second.Next = first;
-                first = second;
-                second = temp;
+                Node<T> temp = current.Next;
+                current.Next = previous;
+                previous = current;
+                current = temp;
             }
 
             this.Tail.Next = null;
-            this.Head = first;
+            this.Head = previous;
         }
 
         public void Reverse_AnotherWay()
