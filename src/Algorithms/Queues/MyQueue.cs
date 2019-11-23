@@ -21,15 +21,11 @@ namespace Algorithms.Queues
             var newNode = new Node<T>(value);
 
             if (First == null)
-            {
                 First = newNode;
-                Last = First;
-            }
             else
-            {
                 Last.Next = newNode;
-                Last = Last.Next;
-            }
+
+            Last = newNode;
 
             Length++;
         }
