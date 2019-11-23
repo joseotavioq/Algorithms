@@ -9,7 +9,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<RemoveDups>();
+            var summary = BenchmarkRunner.Run<Reverse>();
         }
     }
 }
