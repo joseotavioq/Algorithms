@@ -10,7 +10,7 @@
 
         public StackWithArray()
         {
-            _items = new T[5];
+            _items = new T[10];
         }
 
         public T Peek()

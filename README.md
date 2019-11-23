@@ -7,3 +7,5 @@ My study about algorithms.
 ## [HashTables - Benchmark Results](BenchMarkResults_For_HashTables.md)
 
 ## [LinkedLists - Benchmark Results](BenchMarkResults_For_LinkedLists.md)
+
+## [Stacks - Benchmark Results](BenchMarkResults_For_Stacks.md)

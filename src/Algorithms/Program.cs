@@ -1,6 +1,7 @@
 ﻿using Algorithms.ArraysAndStrings;
 using Algorithms.HashTables;
 using Algorithms.LinkedLists;
+using Algorithms.Stacks;
 using BenchmarkDotNet.Running;
 
 namespace Algorithms
@@ -9,7 +10,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<Reverse>();
+            var summary = BenchmarkRunner.Run<Stacks.Stacks>();
         }
     }
 }
