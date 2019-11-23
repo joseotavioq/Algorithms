@@ -112,5 +112,55 @@
         {
             return Tail.Next != null;
         }
+
+        public void SwapNodes(int pos1, int pos2)
+        {
+            //Get info from Pos1
+            Node<T> previousNodeAtPos1 = null;
+            Node<T> nodeAtPos1 = null;
+            if (pos1 - 1 < 0)
+                nodeAtPos1 = Head;
+            else
+            {
+                previousNodeAtPos1 = GetAt(pos1 - 1);
+                nodeAtPos1 = previousNodeAtPos1.Next;
+            }
+
+            var nextNodeAtPos1 = nodeAtPos1.Next;
+
+            //Get info from Pos2
+            Node<T> previousNodeAtPos2 = null;
+            Node<T> nodeAtPos2 = null;
+            if (pos2 - 1 < 0)
+                previousNodeAtPos2 = Head;
+            else
+            {
+                previousNodeAtPos2 = GetAt(pos2 - 1);
+                nodeAtPos2 = previousNodeAtPos2.Next;
+            }
+
+            var nextNodeAtPos2 = nodeAtPos2.Next;
+
+            //Swap Pos1 and Pos2
+            if (previousNodeAtPos1 != null)
+                previousNodeAtPos1.Next = nodeAtPos2;
+            nodeAtPos2.Next = nextNodeAtPos1;
+
+            if (previousNodeAtPos2 != null)
+                previousNodeAtPos2.Next = nodeAtPos1;
+            nodeAtPos1.Next = nextNodeAtPos2;
+
+            //Update Head
+            if (previousNodeAtPos1 == null)
+                Head = nodeAtPos2;
+            else if (previousNodeAtPos2 == null)
+                Head = nodeAtPos1;
+
+            //Update Tail
+            if (nodeAtPos2.Next == null)
+                Tail = nodeAtPos2;
+            else if (nodeAtPos1.Next == null)
+                Tail = nodeAtPos1;
+        }
     }
 }

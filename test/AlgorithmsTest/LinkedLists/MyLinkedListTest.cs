@@ -252,5 +252,41 @@ namespace AlgorithmsTest.LinkedLists
 
             Assert.True(isCyclic);
         }
+
+        [Fact]
+        public void Swap_Nodes_At_Position_1_And_3()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            myLinkedList.SwapNodes(1, 3);
+
+            Assert.Equal(10, myLinkedList.Head.Value);
+            Assert.Equal(99, myLinkedList.Head.Next.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(5, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Equal(5, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
+        }
+
+        [Fact]
+        public void Swap_Nodes_At_Position_0_And_3()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            myLinkedList.SwapNodes(0, 3);
+
+            Assert.Equal(99, myLinkedList.Head.Value);
+            Assert.Equal(5, myLinkedList.Head.Next.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
+        }
     }
 }
