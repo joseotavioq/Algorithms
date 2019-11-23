@@ -316,6 +316,24 @@ namespace AlgorithmsTest.LinkedLists
         }
 
         [Fact]
+        public void Swap_Nodes_At_Position_1_And_2()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(5);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            myLinkedList.SwapNodes(1, 2);
+
+            Assert.Equal(10, myLinkedList.Head.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Value);
+            Assert.Equal(5, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(99, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Equal(99, myLinkedList.Tail.Value);
+            Assert.Null(myLinkedList.Tail.Next);
+        }
+
+        [Fact]
         public void Copy_LinkedList()
         {
             var myLinkedList = new MyLinkedList<int>(10);
@@ -345,6 +363,78 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Null(myLinkedList.Head);
             Assert.Null(myLinkedList.Tail);
             Assert.Equal(0, myLinkedList.Length);
+        }
+
+        [Fact]
+        public void Reverse_Linked_List_With_Even_Length_Of_Elements()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(51);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            myLinkedList.Reverse();
+
+            Assert.Equal(99, myLinkedList.Head.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Value);
+            Assert.Equal(51, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next.Next.Next);
+        }
+
+        [Fact]
+        public void Reverse_Linked_List_With_Odd_Length_Of_Elements()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(51);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+            myLinkedList.Append(33);
+
+            myLinkedList.Reverse();
+
+            Assert.Equal(33, myLinkedList.Head.Value);
+            Assert.Equal(99, myLinkedList.Head.Next.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(51, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next.Next.Next.Next);
+        }
+
+        [Fact]
+        public void Reverse_AnotherWay_Linked_List_With_Even_Length_Of_Elements()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(51);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            myLinkedList.Reverse_AnotherWay();
+
+            Assert.Equal(99, myLinkedList.Head.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Value);
+            Assert.Equal(51, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next.Next.Next);
+        }
+
+        [Fact]
+        public void Reverse_AnotherWay_Linked_List_With_Odd_Length_Of_Elements()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(51);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+            myLinkedList.Append(33);
+
+            myLinkedList.Reverse_AnotherWay();
+
+            Assert.Equal(33, myLinkedList.Head.Value);
+            Assert.Equal(99, myLinkedList.Head.Next.Value);
+            Assert.Equal(16, myLinkedList.Head.Next.Next.Value);
+            Assert.Equal(51, myLinkedList.Head.Next.Next.Next.Value);
+            Assert.Equal(10, myLinkedList.Head.Next.Next.Next.Next.Value);
+            Assert.Null(myLinkedList.Head.Next.Next.Next.Next.Next);
         }
     }
 }

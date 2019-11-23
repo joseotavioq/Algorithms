@@ -158,11 +158,19 @@
             //Swap Pos1 and Pos2
             if (previousNodeAtPos1 != null)
                 previousNodeAtPos1.Next = nodeAtPos2;
-            nodeAtPos2.Next = nextNodeAtPos1;
+
+            if (nodeAtPos2 == nextNodeAtPos1)
+                nodeAtPos2.Next = nodeAtPos1;
+            else
+                nodeAtPos2.Next = nextNodeAtPos1;
 
             if (previousNodeAtPos2 != null)
                 previousNodeAtPos2.Next = nodeAtPos1;
-            nodeAtPos1.Next = nextNodeAtPos2;
+
+            if (nodeAtPos1 == nextNodeAtPos2)
+                nodeAtPos1.Next = nodeAtPos2;
+            else
+                nodeAtPos1.Next = nextNodeAtPos2;
 
             //Update Head
             if (previousNodeAtPos1 == null)
@@ -208,6 +216,39 @@
             Head = null;
             Tail = null;
             Length = 0;
+        }
+
+        public void Reverse()
+        {
+            this.Tail = this.Head;
+
+            var first = this.Head;
+            var second = first.Next;
+
+            while (second != null)
+            {
+                var temp = second.Next;
+                second.Next = first;
+                first = second;
+                second = temp;
+            }
+
+            this.Tail.Next = null;
+            this.Head = first;
+        }
+
+        public void Reverse_AnotherWay()
+        {
+            int start = 0;
+            int end = Length - 1;
+
+            while (start < end)
+            {
+                SwapNodes(start, end);
+
+                start++;
+                end--;
+            }
         }
     }
 }
