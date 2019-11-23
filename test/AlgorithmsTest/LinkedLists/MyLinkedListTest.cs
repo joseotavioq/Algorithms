@@ -305,5 +305,20 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(99, newLinkedList.Next.Next.Next.Value);
             Assert.Null(newLinkedList.Next.Next.Next.Next);
         }
+
+        [Fact]
+        public void Destroy_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(51);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            myLinkedList.Destroy();
+
+            Assert.Null(myLinkedList.Head);
+            Assert.Null(myLinkedList.Tail);
+            Assert.Equal(0, myLinkedList.Length);
+        }
     }
 }

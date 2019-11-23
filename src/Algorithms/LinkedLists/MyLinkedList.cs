@@ -179,5 +179,21 @@
 
             return newLinkedList;
         }
+
+        public void Destroy()
+        {
+            Node<T> current = Head;
+
+            while (current != null)
+            {
+                var next = current.Next;
+                current.Next = null;
+                current = next;
+            }
+
+            Head = null;
+            Tail = null;
+            Length = 0;
+        }
     }
 }
