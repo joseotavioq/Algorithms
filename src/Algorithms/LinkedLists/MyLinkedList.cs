@@ -162,5 +162,22 @@
             else if (nodeAtPos1.Next == null)
                 Tail = nodeAtPos1;
         }
+
+        public Node<T> Copy()
+        {
+            Node<T> newLinkedList = new Node<T>(Head.Value);
+            var currentNewLinkedList = newLinkedList;
+
+            Node<T> current = Head.Next;
+            while (current != null)
+            {
+                currentNewLinkedList.Next = new Node<T>(current.Value);
+
+                current = current.Next;
+                currentNewLinkedList = currentNewLinkedList.Next;
+            }
+
+            return newLinkedList;
+        }
     }
 }

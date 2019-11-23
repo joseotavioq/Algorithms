@@ -288,5 +288,22 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(10, myLinkedList.Tail.Value);
             Assert.Null(myLinkedList.Tail.Next);
         }
+
+        [Fact]
+        public void Copy_LinkedList()
+        {
+            var myLinkedList = new MyLinkedList<int>(10);
+            myLinkedList.Append(51);
+            myLinkedList.Append(16);
+            myLinkedList.Append(99);
+
+            var newLinkedList = myLinkedList.Copy();
+
+            Assert.Equal(10, newLinkedList.Value);
+            Assert.Equal(51, newLinkedList.Next.Value);
+            Assert.Equal(16, newLinkedList.Next.Next.Value);
+            Assert.Equal(99, newLinkedList.Next.Next.Next.Value);
+            Assert.Null(newLinkedList.Next.Next.Next.Next);
+        }
     }
 }
