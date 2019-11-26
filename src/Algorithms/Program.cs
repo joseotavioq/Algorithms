@@ -10,7 +10,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<Stacks.Stacks>();
+            var summary = BenchmarkRunner.Run<SumLists>();
         }
     }
 }

@@ -1,24 +1,26 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Algorithms.LinkedLists
 {
-    //[MemoryDiagnoser]
+    [MemoryDiagnoser]
     public class SumLists
     {
-        //public IEnumerable<MyLinkedList<int>> LinkedLists()
-        //{
-        //    var first = new MyLinkedList<int>(7);
-        //    first.Append(1);
-        //    first.Append(6);
+        public IEnumerable<object[]> LinkedLists()
+        {
+            var first = new MyLinkedList<int>(9);
+            first.Append(9);
+            first.Append(9);
 
-        //    yield return first;
-        //}
+            var second = new MyLinkedList<int>(9);
+            second.Append(9);
+            second.Append(9);
 
-        //[Benchmark(Baseline = true)]
-        //[ArgumentsSource(nameof(LinkedLists))]
+            yield return new object[] { first, second };
+        }
+
+        [Benchmark(Baseline = true)]
+        [ArgumentsSource(nameof(LinkedLists))]
         public Node<int> FirstTry(MyLinkedList<int> first, MyLinkedList<int> second)
         {
             int firstNumber = GetNumber(first.Head, first.Length);
@@ -33,10 +35,10 @@ namespace Algorithms.LinkedLists
         private Node<int> GenerateLinkedList(int sum)
         {
             Node<int> head = null;
+            Node<int> current = null;
 
             decimal number = 0;
 
-            Node<int> current = null;
             while (sum > 0)
             {
                 number = (decimal)sum / 10;
