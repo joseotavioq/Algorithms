@@ -6,7 +6,7 @@ namespace Algorithms.ArraysAndStrings
     [MemoryDiagnoser]
     public class TwoSum
     {
-        //Time: O(n)
+        //Time: O(n^2)
         //Space: O(1)
         [Benchmark(Baseline = true)]
         [Arguments(new int[] { 0, 1, 2, 7, 11, 15 }, 9)]
