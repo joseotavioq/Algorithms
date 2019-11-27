@@ -39,10 +39,9 @@
 
             var newNode = new Node<T>(value);
 
-            Node<T> previous = null;
             if (index > 0)
             {
-                previous = GetAt(index - 1); //get previous element
+                Node<T> previous = GetAt(index - 1); //get previous element
                 newNode.Next = previous.Next;
                 previous.Next = newNode;
             }
@@ -61,6 +60,7 @@
         public void RemoveAt(int index)
         {
             Node<T> previous = null;
+
             if (index > 0)
             {
                 previous = GetAt(index - 1); //get previous element
