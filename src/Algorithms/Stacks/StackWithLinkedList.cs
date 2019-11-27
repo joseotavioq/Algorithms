@@ -16,7 +16,7 @@ namespace Algorithms.Stacks
             return Top.Value;
         }
 
-        public void Push(T value)
+        public virtual void Push(T value)
         {
             Node<T> temp = Top;
             Top = new Node<T>(value);
@@ -28,7 +28,7 @@ namespace Algorithms.Stacks
             Length++;
         }
 
-        public T Pop()
+        public virtual T Pop()
         {
             if (Top == null)
                 return default(T);
