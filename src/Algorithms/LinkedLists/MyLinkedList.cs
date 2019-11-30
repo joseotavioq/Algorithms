@@ -250,5 +250,17 @@
                 end--;
             }
         }
+
+        public static MyLinkedList<T> GenerateLinkedList(T[] values)
+        {
+            var linkedList = new MyLinkedList<T>(values[0]);
+
+            for (int i = 1; i < values.Length; i++)
+            {
+                linkedList.Append(values[i]);
+            }
+
+            return linkedList;
+        }
     }
 }

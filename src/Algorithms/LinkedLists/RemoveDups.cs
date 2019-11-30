@@ -9,23 +9,9 @@ namespace Algorithms.LinkedLists
     [MemoryDiagnoser]
     public class RemoveDups
     {
-        public Node<int> GenerateLinkedList(int[] values)
-        {
-            var head = new Node<int>(values[0]);
-
-            Node<int> current = head;
-            for (int i = 1; i < values.Length; i++)
-            {
-                current.Next = new Node<int>(values[i]);
-                current = current.Next;
-            }
-
-            return head;
-        }
-
         public IEnumerable<Node<int>> LinkedLists()
         {
-            yield return GenerateLinkedList(new int[] { 1, 7, 4, 1, 1, 6 });
+            yield return MyLinkedList<int>.GenerateLinkedList(new int[] { 1, 7, 4, 1, 1, 6 }).Head;
         }
 
         [Benchmark(Baseline = true)]

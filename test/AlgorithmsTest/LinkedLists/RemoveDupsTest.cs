@@ -8,10 +8,9 @@ namespace AlgorithmsTest.LinkedLists
         [Fact]
         public void FirstTry_Remove_Value_1_Duplicated()
         {
-            var removeDups = new RemoveDups();
-            Node<int> head = removeDups.GenerateLinkedList(new int[] { 1, 7, 4, 1, 5, 6 });
+            Node<int> head = MyLinkedList<int>.GenerateLinkedList(new int[] { 1, 7, 4, 1, 5, 6 }).Head;
 
-            var result = removeDups.FirstTry(head);
+            var result = new RemoveDups().FirstTry(head);
 
             Assert.Equal(1, result.Value);
             Assert.Equal(7, result.Next.Value);
@@ -24,10 +23,9 @@ namespace AlgorithmsTest.LinkedLists
         [Fact]
         public void FirstTry_Remove_Value_1_Duplicated_In_A_Sequence()
         {
-            var removeDups = new RemoveDups();
-            Node<int> head = removeDups.GenerateLinkedList(new int[] { 1, 7, 4, 1, 1, 6 });
+            Node<int> head = MyLinkedList<int>.GenerateLinkedList(new int[] { 1, 7, 4, 1, 1, 6 }).Head;
 
-            var result = removeDups.FirstTry(head);
+            var result = new RemoveDups().FirstTry(head);
 
             Assert.Equal(1, result.Value);
             Assert.Equal(7, result.Next.Value);
@@ -39,8 +37,7 @@ namespace AlgorithmsTest.LinkedLists
         [Fact]
         public void SecondTry_Remove_Value_1_Duplicated()
         {
-            var removeDups = new RemoveDups();
-            Node<int> head = removeDups.GenerateLinkedList(new int[] { 1, 7, 4, 1, 5, 6 });
+            Node<int> head = MyLinkedList<int>.GenerateLinkedList(new int[] { 1, 7, 4, 1, 5, 6 }).Head;
 
             var result = new RemoveDups().SecondTry(head);
 
@@ -55,8 +52,7 @@ namespace AlgorithmsTest.LinkedLists
         [Fact]
         public void SecondTry_Remove_Value_1_Duplicated_In_A_Sequence()
         {
-            var removeDups = new RemoveDups();
-            Node<int> head = removeDups.GenerateLinkedList(new int[] { 1, 7, 4, 1, 1, 6 });
+            Node<int> head = MyLinkedList<int>.GenerateLinkedList(new int[] { 1, 7, 4, 1, 1, 6 }).Head;
 
             var result = new RemoveDups().SecondTry(head);
 
