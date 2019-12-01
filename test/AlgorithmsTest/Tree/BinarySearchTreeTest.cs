@@ -66,5 +66,31 @@ namespace AlgorithmsTest.Tree
 
             Assert.Null(treeNode);
         }
+
+        [Fact]
+        public void Remove_Element_20()
+        {
+            var bst = new BinarySearchTree<int>();
+
+            bst.Insert(9);
+            bst.Insert(4);
+            bst.Insert(6);
+            bst.Insert(20);
+            bst.Insert(170);
+            bst.Insert(15);
+            bst.Insert(1);
+
+            bst.Remove(20);
+
+            Assert.Equal(9, bst.Root.Value);
+
+            Assert.Equal(4, bst.Root.Left.Value);
+            Assert.Equal(1, bst.Root.Left.Left.Value);
+            Assert.Equal(6, bst.Root.Left.Right.Value);
+
+            Assert.Equal(170, bst.Root.Right.Value);
+            Assert.Equal(15, bst.Root.Right.Left.Value);
+            Assert.Null(bst.Root.Right.Right);
+        }
     }
 }
