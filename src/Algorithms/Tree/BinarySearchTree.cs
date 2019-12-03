@@ -130,5 +130,41 @@ namespace Algorithms.Tree
                 }
             }
         }
+
+        public void PrintInOrderTraversal() => InOrderTraversal(Root);
+
+        private void InOrderTraversal(TreeNode<T> node)
+        {
+            if (node != null)
+            {
+                InOrderTraversal(node.Left);
+                System.Console.WriteLine(node.Value);
+                InOrderTraversal(node.Right);
+            }
+        }
+
+        public void PrintPreOrderTraversal() => PreOrderTraversal(Root);
+
+        private void PreOrderTraversal(TreeNode<T> node)
+        {
+            if (node != null)
+            {
+                System.Console.WriteLine(node.Value);
+                PreOrderTraversal(node.Left);
+                PreOrderTraversal(node.Right);
+            }
+        }
+
+        public void PrintPostOrderTraversal() => PostOrderTraversal(Root);
+
+        private void PostOrderTraversal(TreeNode<T> node)
+        {
+            if (node != null)
+            {
+                PostOrderTraversal(node.Left);
+                PostOrderTraversal(node.Right);
+                System.Console.WriteLine(node.Value);
+            }
+        }
     }
 }
