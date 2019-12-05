@@ -3,9 +3,13 @@
 namespace Algorithms.Graph
 {
     /// <summary>
-    /// Adjacent Cyclic Unweighted and Undirected Graph
+    /// Adjacency List of
+    /// Cyclic or Acyclic
+    /// Unweighted
+    /// and Directed or Undirected
+    /// Graph
     /// </summary>
-    public class MyUndirectedGraph
+    public class MyUnweightedGraph
     {
         public int NumbersOfNodes { get { return _adjacentList.Count; } }
 
@@ -16,10 +20,12 @@ namespace Algorithms.Graph
             _adjacentList.Add(node, null);
         }
 
-        public void AddEdge(int node1, int node2)
+        public void AddEdge(int node1, int node2, TypesOfGraph typeOfGraph = TypesOfGraph.Undirected)
         {
             addItem(node1, node2);
-            addItem(node2, node1);
+
+            if (typeOfGraph == TypesOfGraph.Undirected)
+                addItem(node2, node1);
         }
 
         private void addItem(int node1, int node2)
@@ -48,5 +54,11 @@ namespace Algorithms.Graph
         {
             return _adjacentList[node];
         }
+    }
+
+    public enum TypesOfGraph
+    {
+        Directed,
+        Undirected
     }
 }
