@@ -1,6 +1,7 @@
 ﻿using Algorithms.ArraysAndStrings;
 using Algorithms.HashTables;
 using Algorithms.LinkedLists;
+using Algorithms.Sorting;
 using Algorithms.Stacks;
 using BenchmarkDotNet.Running;
 
@@ -10,7 +11,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<SumLists>();
+            var summary = BenchmarkRunner.Run<BubbleSort>();
         }
     }
 }

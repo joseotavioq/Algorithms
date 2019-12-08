@@ -76,24 +76,5 @@ namespace Algorithms.Olders
 
             return listOfNumbers;
         }
-
-        //Time: O(n^2)
-        public static int[] Bubble(int[] listOfNumbers)
-        {
-            for(var i = listOfNumbers.Length - 1; i > 1; i--)
-            {
-                for(var j = 0; j < i; j++)
-                {
-                    if(listOfNumbers[j] > listOfNumbers[j + 1])
-                    {
-                        var tmp = listOfNumbers[j];
-                        listOfNumbers[j] = listOfNumbers[j + 1];
-                        listOfNumbers[j + 1] = tmp;
-                    }
-                }
-            }
-
-            return listOfNumbers;
-        }
     }
 }

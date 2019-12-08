@@ -9,3 +9,5 @@ My study about algorithms.
 ## [LinkedLists - Benchmark Results](BenchMarkResults_For_LinkedLists.md)
 
 ## [Stacks - Benchmark Results](BenchMarkResults_For_Stacks.md)
+
+## [Sorting - Benchmark Results](BenchMarkResults_For_Sorting.md)
