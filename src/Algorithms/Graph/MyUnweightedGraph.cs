@@ -20,10 +20,12 @@ namespace Algorithms.Graph
             _adjacentList.Add(node, null);
         }
 
-        public void AddEdge(int node1, int node2, TypesOfGraph typeOfGraph = TypesOfGraph.Undirected)
+        public void AddEdge(int node1, int node2, TypesOfGraph typeOfGraph)
         {
+            //Node1 -> Node2
             addItem(node1, node2);
 
+            //Node2 -> Node1
             if (typeOfGraph == TypesOfGraph.Undirected)
                 addItem(node2, node1);
         }
