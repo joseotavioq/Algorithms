@@ -6,7 +6,7 @@ namespace AlgorithmsTest.Graph
     public class MyUnweightedGraphTest
     {
         [Fact]
-        public void Create_A_Graph_With_Undirected_Connections()
+        public void Create_An_Unweighted_Graph_With_Undirected_Connections()
         {
             var graph = new MyUnweightedGraph();
 
@@ -35,7 +35,7 @@ namespace AlgorithmsTest.Graph
         }
 
         [Fact]
-        public void Create_A_Graph_With_Directed_Connections()
+        public void Create_An_Unweighted_Graph_With_Directed_Connections()
         {
             var graph = new MyUnweightedGraph();
 
