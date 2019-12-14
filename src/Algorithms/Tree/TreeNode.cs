@@ -15,15 +15,7 @@ namespace Algorithms.Tree
 
         public object Clone()
         {
-            var current = new TreeNode<T>(this.Value);
-
-            if (Left != null)
-                current.Left = this.Left.Clone() as TreeNode<T>;
-
-            if (Right != null)
-                current.Right = this.Right.Clone() as TreeNode<T>;
-
-            return current;
+            return this.MemberwiseClone();
         }
     }
 }
