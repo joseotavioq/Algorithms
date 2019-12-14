@@ -42,11 +42,45 @@ namespace AlgorithmsTest.Tree
             bst.Insert(15);
             bst.Insert(1);
 
+            //        9
+            //       / \
+            //      4   20
+            //     / \  / \
+            //    1  6 15  170
             var treeNode = bst.Find(20);
 
             Assert.Equal(20, treeNode.Value);
             Assert.Equal(15, treeNode.Left.Value);
             Assert.Equal(170, treeNode.Right.Value);
+        }
+
+        [Fact]
+        public void Find_Element_9()
+        {
+            var bst = new BinarySearchTree<int>();
+
+            bst.Insert(9);
+            bst.Insert(4);
+            bst.Insert(6);
+            bst.Insert(20);
+            bst.Insert(170);
+            bst.Insert(15);
+            bst.Insert(1);
+
+            //        9
+            //       / \
+            //      4   20
+            //     / \  / \
+            //    1  6 15  170
+            var treeNode = bst.Find(9);
+
+            Assert.Equal(9, treeNode.Value);
+            Assert.Equal(4, treeNode.Left.Value);
+            Assert.Equal(20, treeNode.Right.Value);
+            Assert.Equal(1, treeNode.Left.Left.Value);
+            Assert.Equal(170, treeNode.Right.Right.Value);
+            Assert.Equal(6, treeNode.Left.Right.Value);
+            Assert.Equal(15, treeNode.Right.Left.Value);
         }
 
         [Fact]

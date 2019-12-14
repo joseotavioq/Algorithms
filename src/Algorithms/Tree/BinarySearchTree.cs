@@ -55,9 +55,8 @@ namespace Algorithms.Tree
                 else if (result < 0)
                     current = current.Left;
                 else
-                    return current;
+                    return current.Clone() as TreeNode<T>;
             }
-
             return null;
         }
 
