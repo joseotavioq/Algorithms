@@ -84,6 +84,30 @@ namespace AlgorithmsTest.Tree
         }
 
         [Fact]
+        public void Find_Element_9_Twice_And_Return_Two_Different_Instances()
+        {
+            var bst = new BinarySearchTree<int>();
+
+            bst.Insert(9);
+            bst.Insert(4);
+            bst.Insert(6);
+            bst.Insert(20);
+            bst.Insert(170);
+            bst.Insert(15);
+            bst.Insert(1);
+
+            //        9
+            //       / \
+            //      4   20
+            //     / \  / \
+            //    1  6 15  170
+            var treeNode = bst.Find(9);
+            var treeNodeOtherInstance = bst.Find(9);
+
+            Assert.NotEqual(treeNode, treeNodeOtherInstance);
+        }
+
+        [Fact]
         public void Do_Not_Find_Element_30()
         {
             var bst = new BinarySearchTree<int>();
