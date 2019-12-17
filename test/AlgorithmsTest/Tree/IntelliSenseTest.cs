@@ -62,5 +62,21 @@ namespace AlgorithmsTest.Tree
             Assert.Equal("Microsoft.AspNetCore.Mvc", listOfItems[1]);
             Assert.Equal("Microsoft", listOfItems[2]);
         }
+
+        [Fact]
+        public void Find_Elements_That_Do_Not_Exist_On_Trie()
+        {
+            var intellisense = new IntelliSense();
+            intellisense.AddWord("System");
+            intellisense.AddWord("Microsoft");
+            intellisense.AddWord("System.IO");
+            intellisense.AddWord("Microsoft.AspNetCore.Mvc");
+            intellisense.AddWord("System.Threading");
+            intellisense.AddWord("System.Text");
+
+            var listOfItems = intellisense.Find("System.Drawing");
+
+            Assert.Empty(listOfItems);
+        }
     }
 }
