@@ -4,5 +4,6 @@
 
 |    Method | listOfNumbers |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
 |---------- |-------------- |----------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
-|  FirstTry |      Array[5] |  2.607 ns | 0.1441 ns | 0.1415 ns |  1.00 |    0.00 |     - |     - |     - |         - |
-| SecondTry |      Array[5] | 12.788 ns | 0.3417 ns | 0.6664 ns |  4.96 |    0.40 |     - |     - |     - |         - |
+|  FirstTry |      Array[5] | 27.773 ns | 0.6516 ns | 1.2862 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+| SecondTry |      Array[5] | 14.832 ns | 0.3841 ns | 0.4573 ns |  0.52 |    0.03 |     - |     - |     - |         - |
+|  ThirdTry |      Array[5] |  4.935 ns | 0.1981 ns | 0.3955 ns |  0.18 |    0.02 |     - |     - |     - |         - |
