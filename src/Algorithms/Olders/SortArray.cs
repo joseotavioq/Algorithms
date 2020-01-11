@@ -20,28 +20,6 @@ namespace Algorithms.Olders
             return listOfNumbers;
         }
 
-        //Time: O(n^2)
-        public static int[] Selection(int[] listOfNumbers)
-        {
-            for (var i = 0; i < listOfNumbers.Length - 1; i++)
-            {
-                var min = i;
-
-                for (var j = i + 1; j < listOfNumbers.Length; j++)
-                    if (listOfNumbers[j] < listOfNumbers[min])
-                        min = j;
-
-                if (min != i)
-                {
-                    var tmp = listOfNumbers[min];
-                    listOfNumbers[min] = listOfNumbers[i];
-                    listOfNumbers[i] = tmp;
-                }
-            }
-
-            return listOfNumbers;
-        }
-
         //Time: O(n log N)
         public static int[] Quick(int[] listOfNumbers, int left, int right)
         {
