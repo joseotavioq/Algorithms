@@ -13,3 +13,10 @@
 |   Method | listOfNumbers |     Mean |    Error |   StdDev | Ratio | Gen 0 | Gen 1 | Gen 2 | Allocated |
 |--------- |-------------- |---------:|---------:|---------:|------:|------:|------:|------:|----------:|
 | FirstTry |      Array[5] | 19.11 ns | 0.651 ns | 0.609 ns |  1.00 |     - |     - |     - |         - |
+
+## Insertion Sort - [File](src/Algorithms/Sorting/InsertionSort.cs)
+
+|    Method | listOfNumbers |     Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |-------------- |---------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
+|  FirstTry |      Array[5] | 6.053 ns | 0.2237 ns | 0.3136 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+| SecondTry |      Array[5] | 6.286 ns | 0.2091 ns | 0.2324 ns |  1.02 |    0.06 |     - |     - |     - |         - |
