@@ -13,7 +13,7 @@ namespace AlgorithmsTest.Sorting
             var sortedArray = new SelectionSort().FirstTry(listOfNumbers);
 
             for (int i = 1; i <= sortedArray.Length; i++)
-                Assert.Equal(i, listOfNumbers[i - 1]);
+                Assert.Equal(i, sortedArray[i - 1]);
         }
 
         [Fact]
@@ -24,7 +24,7 @@ namespace AlgorithmsTest.Sorting
             var sortedArray = new SelectionSort().FirstTry(listOfNumbers);
 
             for (int i = 1; i <= sortedArray.Length; i++)
-                Assert.Equal(i, listOfNumbers[i - 1]);
+                Assert.Equal(i, sortedArray[i - 1]);
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace AlgorithmsTest.Sorting
             var sortedArray = new SelectionSort().FirstTry(listOfNumbers);
 
             for (int i = 1; i <= sortedArray.Length; i++)
-                Assert.Equal(i, listOfNumbers[i - 1]);
+                Assert.Equal(i, sortedArray[i - 1]);
         }
     }
 }
