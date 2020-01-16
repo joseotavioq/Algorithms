@@ -5,8 +5,8 @@
         public int GetHeight(int numberOfBlocks)
         {
             int height = 0;
-            int blocksProcessed = 0;
-            for (int i = 1; blocksProcessed < numberOfBlocks; i++)
+
+            for (int i = 1, blocksProcessed = 0; blocksProcessed < numberOfBlocks; i++)
             {
                 blocksProcessed += i;
 
