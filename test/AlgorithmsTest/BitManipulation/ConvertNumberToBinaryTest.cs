@@ -10,9 +10,9 @@ namespace AlgorithmsTest.BitManipulation
         {
             sbyte number = 18;
 
-            int[] result = new ConvertNumberToBinary().FirstTry(number);
+            byte[] result = new ConvertNumberToBinary().FirstTry(number);
 
-            Assert.Equal(new int[] { 0, 0, 0, 1, 0, 0, 1, 0 }, result);
+            Assert.Equal(new byte[] { 0, 0, 0, 1, 0, 0, 1, 0 }, result);
         }
 
         [Fact]
@@ -20,9 +20,9 @@ namespace AlgorithmsTest.BitManipulation
         {
             sbyte number = 123;
 
-            int[] result = new ConvertNumberToBinary().FirstTry(number);
+            byte[] result = new ConvertNumberToBinary().FirstTry(number);
 
-            Assert.Equal(new int[] { 0, 1, 1, 1, 1, 0, 1, 1 }, result);
+            Assert.Equal(new byte[] { 0, 1, 1, 1, 1, 0, 1, 1 }, result);
         }
     }
 }
