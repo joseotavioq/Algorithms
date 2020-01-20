@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Algorithms.BitManipulation
+﻿namespace Algorithms.BitManipulation
 {
     public class ConvertNumberToBinary
     {
