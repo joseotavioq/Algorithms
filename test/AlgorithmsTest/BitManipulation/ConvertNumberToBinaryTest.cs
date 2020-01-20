@@ -8,7 +8,7 @@ namespace AlgorithmsTest.BitManipulation
         [Fact]
         public void Convert_18_To_Binary()
         {
-            int number = 18;
+            sbyte number = 18;
 
             int[] result = new ConvertNumberToBinary().FirstTry(number);
 
@@ -18,7 +18,7 @@ namespace AlgorithmsTest.BitManipulation
         [Fact]
         public void Convert_123_To_Binary()
         {
-            int number = 123;
+            sbyte number = 123;
 
             int[] result = new ConvertNumberToBinary().FirstTry(number);
 

@@ -2,7 +2,7 @@
 {
     public class ConvertNumberToBinary
     {
-        public int[] FirstTry(int number)
+        public int[] FirstTry(sbyte number)
         {
             int[] result = new int[8];
             int index = result.Length - 1;
