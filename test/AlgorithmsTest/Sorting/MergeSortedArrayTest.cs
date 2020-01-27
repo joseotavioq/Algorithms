@@ -1,7 +1,7 @@
-﻿using Algorithms.ArraysAndStrings;
+﻿using Algorithms.Sorting;
 using Xunit;
 
-namespace AlgorithmsTest.ArraysAndStrings
+namespace AlgorithmsTest.Sorting
 {
     public class MergeSortedArrayTest
     {

@@ -1,6 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 
-namespace Algorithms.ArraysAndStrings
+namespace Algorithms.Sorting
 {
     [MemoryDiagnoser]
     public class MergeSortedArray
