@@ -11,6 +11,14 @@
 | Vafzamora_Fast1 | Learning Algorithms |  45.50 ns |  0.5212 ns |  0.4875 ns |  45.55 ns |  0.65 |    0.01 | 0.0305 |     - |     - |     128 B |
 | Vafzamora_Fast2 | Learning Algorithms |  41.28 ns |  1.3377 ns |  3.8382 ns |  39.22 ns |  0.64 |    0.07 | 0.0305 |     - |     - |     128 B |
 
+## Reverse String Preserving Spaces - [File](src/Algorithms/ArraysAndStrings/ReverseStringPreservingSpaces.cs)
+
+|    Method |                input |      Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |--------------------- |----------:|----------:|----------:|------:|-------:|------:|------:|----------:|
+|  FirstTry | A BB (...)FFFFF [26] | 598.69 ns | 11.477 ns | 13.662 ns |  1.00 | 0.1287 |     - |     - |     544 B |
+| SecondTry | A BB (...)FFFFF [26] | 146.45 ns |  2.743 ns |  2.432 ns |  0.24 | 0.0494 |     - |     - |     208 B |
+|  ThirdTry | A BB (...)FFFFF [26] |  53.12 ns |  1.160 ns |  2.178 ns |  0.09 | 0.0380 |     - |     - |     160 B |
+
 ## Merge Sorted Array - [File](src/Algorithms/ArraysAndStrings/MergeSortedArray.cs)
 
 |        Method | firstArray | secondArray |     Mean |     Error |    StdDev | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |

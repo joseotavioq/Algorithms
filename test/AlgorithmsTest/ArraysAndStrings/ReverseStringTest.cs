@@ -3,7 +3,7 @@ using Xunit;
 
 namespace AlgorithmsTest.ArraysAndStrings
 {
-    public class ArraysAndStringsTest
+    public class ReverseStringTest
     {
         [Fact]
         public void FirstTry_Reverse_The_String()
