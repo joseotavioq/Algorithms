@@ -87,5 +87,39 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(7, merged.Next.Next.Next.Value);
             Assert.Null(merged.Next.Next.Next.Next);
         }
+
+        [Fact]
+        public void Merge_LinkedLists_With_The_Same_Value()
+        {
+            var first = new Node<int>(1)
+            {
+                Next = new Node<int>(2)
+                {
+                    Next = new Node<int>(3)
+                    {
+                        Next = new Node<int>(4)
+                    }
+                }
+            };
+
+            var second = new Node<int>(1)
+            {
+                Next = new Node<int>(2)
+                {
+                    Next = new Node<int>(3)
+                    {
+                        Next = new Node<int>(4)
+                    }
+                }
+            };
+
+            var merged = new MergeTwoLinkedLists().FirstTry(first, second);
+
+            Assert.Equal(1, merged.Value);
+            Assert.Equal(2, merged.Next.Value);
+            Assert.Equal(3, merged.Next.Next.Value);
+            Assert.Equal(4, merged.Next.Next.Next.Value);
+            Assert.Null(merged.Next.Next.Next.Next);
+        }
     }
 }
