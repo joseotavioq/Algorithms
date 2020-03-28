@@ -68,17 +68,13 @@ namespace AlgorithmsTest.Queues
                 Assert.Equal(elementToAdd, value);
             });
 
-            Task waitTask = Task.Run(() =>
-            {
-                System.Threading.Thread.Sleep(500);
-            });
-
             Task enqueueTask = Task.Run(() =>
             {
+                Task.Delay(500).Wait();
                 multiThreadQueue.Enqueue(elementToAdd);
             });
 
-            Task.WaitAll(dequeueTask, waitTask, enqueueTask);
+            Task.WaitAll(dequeueTask, enqueueTask);
         }
     }
 }
