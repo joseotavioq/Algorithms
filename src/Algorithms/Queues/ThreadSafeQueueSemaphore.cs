@@ -9,9 +9,9 @@ namespace Algorithms.Queues
 
         private static object _lock = new object();
         private static object _lockDequeue = new object();
-        private static ManualResetEvent _manualResetEvent = new ManualResetEvent(false);
+        private ManualResetEvent _manualResetEvent = new ManualResetEvent(false);
+        private SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(MAX_SIZE);
         private Queue<T> _internalQueue = new Queue<T>();
-        private static SemaphoreSlim _semaphoreSlim = new SemaphoreSlim(MAX_SIZE);
 
         public bool IsEmpty()
         {

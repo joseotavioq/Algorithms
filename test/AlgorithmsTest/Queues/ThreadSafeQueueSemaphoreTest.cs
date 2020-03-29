@@ -44,16 +44,19 @@ namespace AlgorithmsTest.Queues
         [Fact]
         public void Dequeue_Only_After_Enqueue()
         {
+            int element = 1;
+
             var multiThreadQueue = new ThreadSafeQueueSemaphore<int>();
 
             Task enqueueTask = Task.Run(() =>
             {
                 Task.Delay(500).Wait();
-                multiThreadQueue.Enqueue(1);
+                multiThreadQueue.Enqueue(element);
             });
 
-            multiThreadQueue.Dequeue();
+            var elementDequeued = multiThreadQueue.Dequeue();
 
+            Assert.Equal(element, elementDequeued);
             Assert.True(multiThreadQueue.IsEmpty());
             Assert.False(multiThreadQueue.IsFull());
         }
