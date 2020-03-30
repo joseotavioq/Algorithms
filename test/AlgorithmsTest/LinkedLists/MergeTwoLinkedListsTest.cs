@@ -121,5 +121,71 @@ namespace AlgorithmsTest.LinkedLists
             Assert.Equal(4, merged.Next.Next.Next.Value);
             Assert.Null(merged.Next.Next.Next.Next);
         }
+
+        [Fact]
+        public void Merge_LinkedLists_With_First_Smaller_Than_Second_In_Size()
+        {
+            var first = new Node<int>(2)
+            {
+                Next = new Node<int>(4)
+                {
+                    Next = new Node<int>(5)
+                }
+            };
+
+            var second = new Node<int>(1)
+            {
+                Next = new Node<int>(3)
+                {
+                    Next = new Node<int>(5)
+                    {
+                        Next = new Node<int>(6)
+                    }
+                }
+            };
+
+            var merged = new MergeTwoLinkedLists().FirstTry(first, second);
+
+            Assert.Equal(1, merged.Value);
+            Assert.Equal(2, merged.Next.Value);
+            Assert.Equal(3, merged.Next.Next.Value);
+            Assert.Equal(4, merged.Next.Next.Next.Value);
+            Assert.Equal(5, merged.Next.Next.Next.Next.Value);
+            Assert.Equal(6, merged.Next.Next.Next.Next.Next.Value);
+            Assert.Null(merged.Next.Next.Next.Next.Next.Next);
+        }
+
+        [Fact]
+        public void Merge_LinkedLists_With_Second_Smaller_Than_First_In_Size()
+        {
+            var first = new Node<int>(2)
+            {
+                Next = new Node<int>(4)
+                {
+                    Next = new Node<int>(5)
+                    {
+                        Next = new Node<int>(6)
+                    }
+                }
+            };
+
+            var second = new Node<int>(1)
+            {
+                Next = new Node<int>(3)
+                {
+                    Next = new Node<int>(5)
+                }
+            };
+
+            var merged = new MergeTwoLinkedLists().FirstTry(first, second);
+
+            Assert.Equal(1, merged.Value);
+            Assert.Equal(2, merged.Next.Value);
+            Assert.Equal(3, merged.Next.Next.Value);
+            Assert.Equal(4, merged.Next.Next.Next.Value);
+            Assert.Equal(5, merged.Next.Next.Next.Next.Value);
+            Assert.Equal(6, merged.Next.Next.Next.Next.Next.Value);
+            Assert.Null(merged.Next.Next.Next.Next.Next.Next);
+        }
     }
 }
