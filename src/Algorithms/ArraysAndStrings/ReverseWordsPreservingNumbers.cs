@@ -4,7 +4,7 @@ using BenchmarkDotNet.Attributes;
 namespace Algorithms.ArraysAndStrings
 {
     [MemoryDiagnoser]
-    public class ReverseWords
+    public class ReverseWordsPreservingNumbers
     {
         [Benchmark(Baseline = true)]
         [Arguments("The quick, bro567wn 125 foxes jump over the lazy, fuzzy, hounds!")]
