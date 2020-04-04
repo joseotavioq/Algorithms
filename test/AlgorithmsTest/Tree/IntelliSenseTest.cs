@@ -40,8 +40,8 @@ namespace AlgorithmsTest.Tree
             var listOfItems = intellisense.Find("System.");
 
             Assert.Equal("System.IO", listOfItems[0]);
-            Assert.Equal("System.Text", listOfItems[1]);
-            Assert.Equal("System.Threading", listOfItems[2]);
+            Assert.Equal("System.Threading", listOfItems[1]);
+            Assert.Equal("System.Text", listOfItems[2]);
         }
 
         [Fact]
@@ -58,9 +58,9 @@ namespace AlgorithmsTest.Tree
 
             var listOfItems = intellisense.Find("M");
 
-            Assert.Equal("MS", listOfItems[0]);
-            Assert.Equal("Microsoft.AspNetCore.Mvc", listOfItems[1]);
-            Assert.Equal("Microsoft", listOfItems[2]);
+            Assert.Equal("Microsoft.AspNetCore.Mvc", listOfItems[0]);
+            Assert.Equal("Microsoft", listOfItems[1]);
+            Assert.Equal("MS", listOfItems[2]);
         }
 
         [Fact]

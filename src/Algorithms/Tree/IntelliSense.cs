@@ -19,8 +19,8 @@ namespace Algorithms.Tree
             {
                 char letter = word[i];
 
-                if (currentNode[letter] == null)
-                    currentNode[letter] = new TrieNode(letter, (i == word.Length - 1));
+                if (!currentNode.ContainsKey(letter))
+                    currentNode.Add(letter, new TrieNode(letter, (i == word.Length - 1)));
 
                 currentNode = currentNode[letter].Nodes;
             }
@@ -38,14 +38,13 @@ namespace Algorithms.Tree
             var currentNode = node.Nodes;
             foreach (char letter in prefix)
             {
-                node = currentNode[letter];
-
-                if (node == null)
+                if(!currentNode.ContainsKey(letter))
                 {
                     prefixFound = false;
                     break;
                 }
 
+                node = currentNode[letter];
                 currentNode = node.Nodes;
             }
 
@@ -53,7 +52,7 @@ namespace Algorithms.Tree
             {
                 GetWord(node, prefix, words);
 
-                if (node.FinalLetter)
+                if (node.IsItAFinalLetter)
                     words.Add(prefix);
             }
 
@@ -66,14 +65,11 @@ namespace Algorithms.Tree
             {
                 foreach (var item in node.Nodes)
                 {
-                    if (item != null)
-                    {
-                        var p = prefix + item.Letter;
-                        GetWord(item, p, words);
+                    var p = prefix + item.Key;
+                    GetWord(item.Value, p, words);
 
-                        if (item.FinalLetter)
-                            words.Add(p);
-                    }
+                    if (item.Value.IsItAFinalLetter)
+                        words.Add(p);
                 }
             }
         }
