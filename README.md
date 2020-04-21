@@ -1,3 +1,5 @@
+![Build .NET Core](https://github.com/joseotavioq/Algorithms/workflows/.NET%20Core/badge.svg)
+
 # Algorithms
 
 My study about algorithms.
