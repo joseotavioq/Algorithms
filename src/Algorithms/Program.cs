@@ -12,7 +12,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<ReverseStringPreservingSpaces>();
+            var summary = BenchmarkRunner.Run<Fibonacci>();
         }
     }
 }

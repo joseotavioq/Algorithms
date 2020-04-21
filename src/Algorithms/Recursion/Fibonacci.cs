@@ -1,14 +1,12 @@
 ﻿using BenchmarkDotNet.Attributes;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace Algorithms.Recursion
 {
     [MemoryDiagnoser]
     public class Fibonacci
     {
-        [Benchmark]
+        [Benchmark(Baseline = true)]
         [Arguments(30)]
         public int Recursive(int index)
         {
@@ -30,6 +28,24 @@ namespace Algorithms.Recursion
             }
 
             return elements[index];
+        }
+
+        [Benchmark]
+        [Arguments(30)]
+        public int IterativeWithoutMemoryAllocation(int index)
+        {
+            if (index < 2)
+                return index;
+
+            int a = 0, b = 1, f = 0;
+            for (int i = 2; i <= index; i++)
+            {
+                f = a + b;
+                a = b;
+                b = f;
+            }
+
+            return f;
         }
     }
 }
