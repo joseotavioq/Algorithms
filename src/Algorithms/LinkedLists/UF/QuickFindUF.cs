@@ -1,6 +1,6 @@
 ﻿namespace Algorithms.LinkedLists.UF
 {
-    public class UnionFind
+    public class QuickFindUF
     {
         protected int[] _nodes;
 
@@ -9,7 +9,7 @@
             get { return _nodes; }
         }
 
-        public UnionFind(int numberOfObjects)
+        public QuickFindUF(int numberOfObjects)
         {
             _nodes = new int[numberOfObjects];
 

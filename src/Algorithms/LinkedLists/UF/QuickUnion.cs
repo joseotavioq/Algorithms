@@ -1,6 +1,6 @@
 ﻿namespace Algorithms.LinkedLists.UF
 {
-    public class QuickUnion : UnionFind
+    public class QuickUnion : QuickFindUF
     {
         public QuickUnion(int numberOfObjects) : base(numberOfObjects) { }
 
