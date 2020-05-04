@@ -3,7 +3,7 @@ using Algorithms.LinkedLists.UF;
 
 namespace AlgorithmsTest.LinkedLists.UF
 {
-    public class QuickUnionTest
+    public class QuickUnionUFTest
     {
         [Fact]
         public void Connect_4_with_3()
@@ -11,7 +11,7 @@ namespace AlgorithmsTest.LinkedLists.UF
             int from = 4;
             int to = 3;
 
-            var uf = new QuickUnion(10);
+            var uf = new QuickUnionUF(10);
 
             uf.Union(from, to);
 
@@ -30,7 +30,7 @@ namespace AlgorithmsTest.LinkedLists.UF
             int from = 6;
             int to = 5;
 
-            var uf = new QuickUnion(10);
+            var uf = new QuickUnionUF(10);
 
             uf.Union(from, to);
 
@@ -46,7 +46,7 @@ namespace AlgorithmsTest.LinkedLists.UF
         [Fact]
         public void Connect_4_with_3_and_3_with_8()
         {
-            var uf = new QuickUnion(10);
+            var uf = new QuickUnionUF(10);
 
             uf.Union(4, 3);
             uf.Union(3, 8);
@@ -65,7 +65,7 @@ namespace AlgorithmsTest.LinkedLists.UF
         [Fact]
         public void Connect_4_with_3_and_3_with_8_and_9_with_4()
         {
-            var uf = new QuickUnion(10);
+            var uf = new QuickUnionUF(10);
 
             uf.Union(4, 3);
             uf.Union(3, 8);
@@ -87,7 +87,7 @@ namespace AlgorithmsTest.LinkedLists.UF
         [Fact]
         public void A_big_test()
         {
-            var uf = new QuickUnion(10);
+            var uf = new QuickUnionUF(10);
 
             uf.Union(4, 3);
             uf.Union(3, 8);
