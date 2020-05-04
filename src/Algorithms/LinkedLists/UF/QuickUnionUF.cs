@@ -16,7 +16,7 @@
             return root(x) == root(y);
         }
 
-        private int root(int i)
+        protected virtual int root(int i)
         {
             while (i != _nodes[i])
                 i = _nodes[i];

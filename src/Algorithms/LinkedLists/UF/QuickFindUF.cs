@@ -37,9 +37,12 @@
             return _nodes[x];
         }
 
-        public int Count()
+        public int Length
         {
-            return _nodes.Length;
+            get
+            {
+                return _nodes.Length;
+            }
         }
     }
 }

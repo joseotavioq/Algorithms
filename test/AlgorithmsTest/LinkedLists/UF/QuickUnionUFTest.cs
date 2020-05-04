@@ -15,7 +15,7 @@ namespace AlgorithmsTest.LinkedLists.UF
 
             uf.Union(from, to);
 
-            for (int i = 0; i < uf.Count(); i++)
+            for (int i = 0; i < uf.Length; i++)
             {
                 if (i == from)
                     Assert.Equal(to, uf.Nodes[i]);
@@ -34,7 +34,7 @@ namespace AlgorithmsTest.LinkedLists.UF
 
             uf.Union(from, to);
 
-            for (int i = 0; i < uf.Count(); i++)
+            for (int i = 0; i < uf.Length; i++)
             {
                 if (i == from)
                     Assert.Equal(to, uf.Nodes[i]);
@@ -51,7 +51,7 @@ namespace AlgorithmsTest.LinkedLists.UF
             uf.Union(4, 3);
             uf.Union(3, 8);
 
-            for (int i = 0; i < uf.Count(); i++)
+            for (int i = 0; i < uf.Length; i++)
             {
                 if (i == 3)
                     Assert.Equal(8, uf.Nodes[i]);
@@ -71,7 +71,7 @@ namespace AlgorithmsTest.LinkedLists.UF
             uf.Union(3, 8);
             uf.Union(9, 4);
 
-            for (int i = 0; i < uf.Count(); i++)
+            for (int i = 0; i < uf.Length; i++)
             {
                 if (i == 3)
                     Assert.Equal(8, uf.Nodes[i]);
