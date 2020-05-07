@@ -6,7 +6,7 @@ namespace Algorithms.Sorting
     public class InsertionSort
     {
         [Benchmark(Baseline = true)]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] FirstTry(int[] listOfNumbers)
         {
             int lastJ = 0;
@@ -37,7 +37,7 @@ namespace Algorithms.Sorting
         }
 
         [Benchmark]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] SecondTry(int[] listOfNumbers)
         {
             for (var i = 1; i < listOfNumbers.Length; i++)
@@ -50,6 +50,30 @@ namespace Algorithms.Sorting
                     j -= 1;
                 }
                 listOfNumbers[j] = atual;
+            }
+
+            return listOfNumbers;
+        }
+
+        [Benchmark]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
+        public int[] ThirdTry(int[] listOfNumbers)
+        {
+            for (int i = 0; i < listOfNumbers.Length; i++)
+            {
+                for (int j = i; j > 0; j--)
+                {
+                    if (listOfNumbers[j] < listOfNumbers[j - 1])
+                    {
+                        int tmp = listOfNumbers[j];
+                        listOfNumbers[j] = listOfNumbers[j - 1];
+                        listOfNumbers[j - 1] = tmp;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
             }
 
             return listOfNumbers;

@@ -18,8 +18,9 @@
 
 |    Method | listOfNumbers |     Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
 |---------- |-------------- |---------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
-|  FirstTry |      Array[5] | 6.053 ns | 0.2237 ns | 0.3136 ns |  1.00 |    0.00 |     - |     - |     - |         - |
-| SecondTry |      Array[5] | 6.286 ns | 0.2091 ns | 0.2324 ns |  1.02 |    0.06 |     - |     - |     - |         - |
+|  FirstTry |      Int32[8] | 5.361 ns | 0.1252 ns | 0.1537 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+| SecondTry |      Int32[8] | 5.655 ns | 0.1264 ns | 0.1121 ns |  1.05 |    0.04 |     - |     - |     - |         - |
+|  ThirdTry |      Int32[8] | 5.895 ns | 0.1750 ns | 0.1719 ns |  1.10 |    0.05 |     - |     - |     - |         - |
 
 ## Merge Sort - [File](src/Algorithms/Sorting/MergeSort.cs)
 
