@@ -61,18 +61,11 @@ namespace Algorithms.Sorting
         {
             for (int i = 0; i < listOfNumbers.Length; i++)
             {
-                for (int j = i; j > 0; j--)
+                for (int j = i; j > 0 && listOfNumbers[j] < listOfNumbers[j - 1]; j--)
                 {
-                    if (listOfNumbers[j] < listOfNumbers[j - 1])
-                    {
-                        int tmp = listOfNumbers[j];
-                        listOfNumbers[j] = listOfNumbers[j - 1];
-                        listOfNumbers[j - 1] = tmp;
-                    }
-                    else
-                    {
-                        break;
-                    }
+                    int tmp = listOfNumbers[j];
+                    listOfNumbers[j] = listOfNumbers[j - 1];
+                    listOfNumbers[j - 1] = tmp;
                 }
             }
 
