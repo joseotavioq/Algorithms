@@ -24,6 +24,7 @@
 
 ## Merge Sort - [File](src/Algorithms/Sorting/MergeSort.cs)
 
-|   Method | listOfNumbers |     Mean |   Error |   StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|--------- |-------------- |---------:|--------:|---------:|------:|-------:|------:|------:|----------:|
-| FirstTry |      Array[5] | 194.5 ns | 4.94 ns | 14.01 ns |  1.00 | 0.0989 |     - |     - |     416 B |
+|    Method | listOfNumbers |      Mean |    Error |   StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |-------------- |----------:|---------:|---------:|------:|-------:|------:|------:|----------:|
+|  FirstTry |      Int32[5] | 106.97 ns | 2.199 ns | 4.341 ns |  1.00 | 0.0994 |     - |     - |     416 B |
+| SecondTry |      Int32[5] |  50.67 ns | 0.534 ns | 0.417 ns |  0.46 | 0.0114 |     - |     - |      48 B |

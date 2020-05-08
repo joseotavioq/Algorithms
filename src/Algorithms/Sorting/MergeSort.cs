@@ -1,5 +1,6 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
+using TraceReloggerLib;
 
 namespace Algorithms.Sorting
 {
@@ -26,10 +27,10 @@ namespace Algorithms.Sorting
             left = FirstTry(left);
             right = FirstTry(right);
 
-            return Merge(left, right);
+            return MergeFirst(left, right);
         }
 
-        private int[] Merge(int[] left, int[] right)
+        private int[] MergeFirst(int[] left, int[] right)
         {
             int iLeft = 0;
             int iRight = 0;
@@ -61,6 +62,56 @@ namespace Algorithms.Sorting
             }
 
             return result;
+        }
+
+        [Benchmark]
+        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        public int[] SecondTry(int[] listOfNumbers)
+        {
+            int[] helper = new int[listOfNumbers.Length];
+
+            MergeSecond(listOfNumbers, helper, 0, listOfNumbers.Length - 1);
+
+            return listOfNumbers;
+        }
+
+        private void MergeSecond(int[] listOfNumbers, int[] helper, int low, int high)
+        {
+            if (low < high)
+            {
+                int middle = (low + high) / 2;
+
+                //Left Half
+                MergeSecond(listOfNumbers, helper, low, middle);
+
+                //Right Half
+                MergeSecond(listOfNumbers, helper, middle + 1, high);
+
+                //Merge the Two Parts
+                MergeSecond(listOfNumbers, helper, low, middle, high);
+            }
+        }
+
+        private void MergeSecond(int[] listOfNumbers, int[] helper, int low, int middle, int high)
+        {
+            for (int i = low; i <= high; i++)
+                helper[i] = listOfNumbers[i];
+
+            int helperLeft = low;
+            int helperRight = middle + 1;
+            int current = low;
+
+            while (helperLeft <= middle && helperRight <= high)
+            {
+                if (helper[helperLeft] <= helper[helperRight])
+                    listOfNumbers[current++] = helper[helperLeft++];
+                else
+                    listOfNumbers[current++] = helper[helperRight++];
+            }
+
+            int remaining = middle - helperLeft;
+            for (int i = 0; i <= remaining; i++)
+                listOfNumbers[current++] = helper[helperLeft++];
         }
     }
 }
