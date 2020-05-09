@@ -6,7 +6,7 @@ namespace Algorithms.Sorting
     public class BubbleSort
     {
         [Benchmark(Baseline = true)]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] FirstTry(int[] listOfNumbers)
         {
             for (var i = 0; i < listOfNumbers.Length; i++)
@@ -26,7 +26,7 @@ namespace Algorithms.Sorting
         }
 
         [Benchmark]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] SecondTry(int[] listOfNumbers)
         {
             for (var i = listOfNumbers.Length - 1; i > 1; i--)
@@ -46,7 +46,7 @@ namespace Algorithms.Sorting
         }
 
         [Benchmark]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] ThirdTry(int[] listOfNumbers)
         {
             bool swapped;

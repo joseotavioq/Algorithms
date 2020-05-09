@@ -12,7 +12,7 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<MergeSort>();
+            var summary = BenchmarkRunner.Run<QuickSort>();
         }
     }
 }

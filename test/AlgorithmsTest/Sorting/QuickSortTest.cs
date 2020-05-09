@@ -12,8 +12,8 @@ namespace AlgorithmsTest.Sorting
 
             var sortedArray = new QuickSort().FirstTry(listOfNumbers);
 
-            Assert.Equal(1, sortedArray[0]);
-            Assert.Equal(8, sortedArray[sortedArray.Length - 1]);
+            for (int i = 1; i <= sortedArray.Length; i++)
+                Assert.Equal(i, sortedArray[i - 1]);
         }
     }
 }

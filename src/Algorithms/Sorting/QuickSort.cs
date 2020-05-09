@@ -1,17 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using BenchmarkDotNet.Attributes;
 
 namespace Algorithms.Sorting
 {
+    [MemoryDiagnoser]
     public class QuickSort
     {
+        [Benchmark(Baseline = true)]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] FirstTry(int[] listOfNumbers)
         {
-            return Quick(listOfNumbers, 0, listOfNumbers.Length - 1);
+            FirstQuick(listOfNumbers, 0, listOfNumbers.Length - 1);
+            return listOfNumbers;
         }
 
-        public int[] Quick(int[] listOfNumbers, int left, int right)
+        public void FirstQuick(int[] listOfNumbers, int left, int right)
         {
             if (left < right)
             {
@@ -38,11 +40,9 @@ namespace Algorithms.Sorting
                 listOfNumbers[left] = listOfNumbers[rightPointer];
                 listOfNumbers[rightPointer] = pivot;
 
-                Quick(listOfNumbers, left, rightPointer - 1);
-                Quick(listOfNumbers, rightPointer + 1, right);
+                FirstQuick(listOfNumbers, left, rightPointer - 1);
+                FirstQuick(listOfNumbers, rightPointer + 1, right);
             }
-
-            return listOfNumbers;
         }
     }
 }

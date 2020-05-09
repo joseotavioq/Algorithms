@@ -8,7 +8,7 @@ namespace Algorithms.Sorting
     public class MergeSort
     {
         [Benchmark(Baseline = true)]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] FirstTry(int[] listOfNumbers)
         {
             if (listOfNumbers.Length == 1)
@@ -65,7 +65,7 @@ namespace Algorithms.Sorting
         }
 
         [Benchmark]
-        [Arguments(new int[] { 5, 10, 3, 2, 4 })]
+        [Arguments(new int[] { 8, 7, 6, 5, 4, 3, 2, 1 })]
         public int[] SecondTry(int[] listOfNumbers)
         {
             int[] helper = new int[listOfNumbers.Length];
