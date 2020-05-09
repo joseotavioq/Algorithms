@@ -1,9 +1,17 @@
-namespace Algorithms.Olders
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Algorithms.Sorting
 {
-    public static class SortArray
+    public class QuickSort
     {
-        //Time: O(n log N)
-        public static int[] Quick(int[] listOfNumbers, int left, int right)
+        public int[] FirstTry(int[] listOfNumbers)
+        {
+            return Quick(listOfNumbers, 0, listOfNumbers.Length - 1);
+        }
+
+        public int[] Quick(int[] listOfNumbers, int left, int right)
         {
             if (left < right)
             {
