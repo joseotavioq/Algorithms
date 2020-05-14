@@ -9,8 +9,9 @@
 
 ## Fibonacci - [File](src/Algorithms/Recursion/Fibonacci.cs)
 
-|                           Method | index |             Mean |           Error |          StdDev |           Median | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|--------------------------------- |------ |-----------------:|----------------:|----------------:|-----------------:|------:|-------:|------:|------:|----------:|
-|                        Recursive |    30 | 4,431,004.420 ns | 144,289.3807 ns | 248,892.0924 ns | 4,318,930.078 ns | 1.000 |      - |     - |     - |         - |
-|                        Iterative |    30 |       162.181 ns |       3.1078 ns |       3.5789 ns |       159.864 ns | 0.000 | 0.0880 |     - |     - |     368 B |
-| IterativeWithoutMemoryAllocation |    30 |         9.168 ns |       0.1949 ns |       0.1823 ns |         9.131 ns | 0.000 |      - |     - |     - |         - |
+|                           Method | index |             Mean |          Error |         StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------------------------------- |------ |-----------------:|---------------:|---------------:|------:|-------:|------:|------:|----------:|
+|                        Recursive |    30 | 4,699,240.599 ns | 43,060.4798 ns | 40,278.7995 ns | 1.000 |      - |     - |     - |      11 B |
+|         RecursiveWithMemoization |    30 |       248.752 ns |      4.6236 ns |      4.0987 ns | 0.000 | 0.0362 |     - |     - |     152 B |
+|                        Iterative |    30 |       155.511 ns |      2.5202 ns |      2.1045 ns | 0.000 | 0.0880 |     - |     - |     368 B |
+| IterativeWithoutMemoryAllocation |    30 |         9.065 ns |      0.1850 ns |      0.1640 ns | 0.000 |      - |     - |     - |         - |

@@ -18,6 +18,28 @@ namespace Algorithms.Recursion
 
         [Benchmark]
         [Arguments(30)]
+        public int RecursiveWithMemoization(int index)
+        {
+            if (index < 2)
+                return index;
+
+            return Memoization(index, new int[index + 1]);
+        }
+
+        private int Memoization(int index, int[] arr)
+        {
+            if (index < 2)
+                return index;
+            else if (arr[index] != 0)
+                return arr[index];
+
+            arr[index] = Memoization(index - 1, arr) + Memoization(index - 2, arr);
+
+            return arr[index];
+        }
+
+        [Benchmark]
+        [Arguments(30)]
         public int Iterative(int index)
         {
             List<int> elements = new List<int>() { 0, 1 };

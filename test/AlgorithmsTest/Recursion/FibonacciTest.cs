@@ -54,6 +54,54 @@ namespace AlgorithmsTest.Recursion
         }
 
         [Fact]
+        public void RecursiveWithMemoization_Index_of_10()
+        {
+            var result = new Fibonacci().RecursiveWithMemoization(10);
+
+            Assert.Equal(55, result);
+        }
+
+        [Fact]
+        public void RecursiveWithMemoization_Index_of_7()
+        {
+            var result = new Fibonacci().RecursiveWithMemoization(7);
+
+            Assert.Equal(13, result);
+        }
+
+        [Fact]
+        public void RecursiveWithMemoization_Index_of_3()
+        {
+            var result = new Fibonacci().RecursiveWithMemoization(3);
+
+            Assert.Equal(2, result);
+        }
+
+        [Fact]
+        public void RecursiveWithMemoization_Index_of_2()
+        {
+            var result = new Fibonacci().RecursiveWithMemoization(2);
+
+            Assert.Equal(1, result);
+        }
+
+        [Fact]
+        public void RecursiveWithMemoization_Index_of_1()
+        {
+            var result = new Fibonacci().RecursiveWithMemoization(1);
+
+            Assert.Equal(1, result);
+        }
+
+        [Fact]
+        public void RecursiveWithMemoization_Index_of_0()
+        {
+            var result = new Fibonacci().RecursiveWithMemoization(0);
+
+            Assert.Equal(0, result);
+        }
+
+        [Fact]
         public void Iterative_Index_of_10()
         {
             var result = new Fibonacci().Iterative(10);
