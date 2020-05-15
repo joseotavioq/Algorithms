@@ -85,6 +85,17 @@ namespace AlgorithmsTest.ArraysAndStrings
 
             Assert.False(result);
         }
+
+        [Fact]
+        public void FirstTry_Equal_Parameters_Returns_True()
+        {
+            string first = "pale";
+            string second = "pale";
+
+            bool result = new OneAway().FirstTry(first, second);
+
+            Assert.True(result);
+        }
         #endregion
 
         #region Method Fast
@@ -163,6 +174,17 @@ namespace AlgorithmsTest.ArraysAndStrings
             bool result = new OneAway().Fast(first, second);
 
             Assert.False(result);
+        }
+
+        [Fact]
+        public void Fast_Equal_Parameters_Returns_True()
+        {
+            string first = "pale";
+            string second = "pale";
+
+            bool result = new OneAway().Fast(first, second);
+
+            Assert.True(result);
         }
         #endregion
     }
