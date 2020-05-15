@@ -43,6 +43,27 @@ namespace Algorithms.LinkedLists
         [ArgumentsSource(nameof(LinkedLists))]
         public Node<int> SecondTry(Node<int> head, int k)
         {
+            List<Node<int>> nodes = new List<Node<int>>();
+
+            var current = head;
+            while (current != null)
+            {
+                nodes.Add(current);
+                current = current.Next;
+            }
+
+            int KthToLast = nodes.Count - k;
+
+            if (KthToLast >= 0 && KthToLast < nodes.Count)
+                return nodes[KthToLast];
+
+            return null;
+        }
+
+        [Benchmark]
+        [ArgumentsSource(nameof(LinkedLists))]
+        public Node<int> ThirdTry(Node<int> head, int k)
+        {
             if (head == null)
                 return null;
 
@@ -73,7 +94,7 @@ namespace Algorithms.LinkedLists
 
         [Benchmark]
         [ArgumentsSource(nameof(LinkedLists))]
-        public Node<int> ThirdTry(Node<int> head, int k)
+        public Node<int> FourthTry(Node<int> head, int k)
         {
             var p1 = head;
             var p2 = head;

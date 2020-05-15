@@ -22,8 +22,9 @@
 
 ## Return Kth to Last - [File](src/Algorithms/LinkedLists/ReturnKthToLast.cs)
 
-|    Method |                 head | k |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
-|---------- |--------------------- |-- |----------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
-|  FirstTry | Algor(...)nt32] [43] | 3 |  4.674 ns | 0.1621 ns | 0.2219 ns |  1.00 |    0.00 |     - |     - |     - |         - |
-| SecondTry | Algor(...)nt32] [43] | 3 | 16.453 ns | 0.3955 ns | 1.0556 ns |  3.53 |    0.27 |     - |     - |     - |         - |
-|  ThirdTry | Algor(...)nt32] [43] | 3 |  2.784 ns | 0.1266 ns | 0.1856 ns |  0.60 |    0.03 |     - |     - |     - |         - |
+|    Method |                 head | k |      Mean |     Error |    StdDev | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |--------------------- |-- |----------:|----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
+|  FirstTry | Algor(...)nt32] [43] | 3 |  4.445 ns | 0.1361 ns | 0.1273 ns |  1.00 |    0.00 |      - |     - |     - |         - |
+| SecondTry | Algor(...)nt32] [43] | 3 | 61.505 ns | 1.2938 ns | 1.4381 ns | 13.86 |    0.51 | 0.0421 |     - |     - |     176 B |
+|  ThirdTry | Algor(...)nt32] [43] | 3 | 14.031 ns | 0.1111 ns | 0.0985 ns |  3.16 |    0.10 |      - |     - |     - |         - |
+| FourthTry | Algor(...)nt32] [43] | 3 |  2.750 ns | 0.1190 ns | 0.1055 ns |  0.62 |    0.03 |      - |     - |     - |         - |
