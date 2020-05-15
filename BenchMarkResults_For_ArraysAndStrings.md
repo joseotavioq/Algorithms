@@ -2,14 +2,15 @@
 
 ## Reverse String - [File](src/Algorithms/ArraysAndStrings/ReverseString.cs)
 
-|          Method |      myEntireString |      Mean |      Error |     StdDev |    Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|---------------- |-------------------- |----------:|-----------:|-----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
-|        FirstTry | Learning Algorithms |  69.60 ns |  1.4121 ns |  1.3209 ns |  70.38 ns |  1.00 |    0.00 | 0.0418 |     - |     - |     176 B |
-|   InJustOneLine | Learning Algorithms | 498.49 ns |  2.9417 ns |  2.2967 ns | 498.74 ns |  7.19 |    0.15 | 0.2012 |     - |     - |     848 B |
-|  InJustOneLine2 | Learning Algorithms | 460.00 ns | 12.9832 ns | 35.5412 ns | 443.08 ns |  7.20 |    0.54 | 0.1020 |     - |     - |     432 B |
-|            Fast | Learning Algorithms |  40.32 ns |  1.8770 ns |  5.3856 ns |  38.60 ns |  0.55 |    0.05 | 0.0305 |     - |     - |     128 B |
-| Vafzamora_Fast1 | Learning Algorithms |  45.50 ns |  0.5212 ns |  0.4875 ns |  45.55 ns |  0.65 |    0.01 | 0.0305 |     - |     - |     128 B |
-| Vafzamora_Fast2 | Learning Algorithms |  41.28 ns |  1.3377 ns |  3.8382 ns |  39.22 ns |  0.64 |    0.07 | 0.0305 |     - |     - |     128 B |
+|            Method |      myEntireString |        Mean |     Error |    StdDev | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------ |-------------------- |------------:|----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
+|          FirstTry | Learning Algorithms |   197.34 ns |  5.404 ns | 14.974 ns |  1.00 |    0.00 | 0.0420 |     - |     - |     176 B |
+|     InJustOneLine | Learning Algorithms |   453.47 ns |  9.021 ns | 16.944 ns |  2.35 |    0.37 | 0.1659 |     - |     - |     696 B |
+|    InJustOneLine2 | Learning Algorithms | 1,042.65 ns | 20.867 ns | 44.468 ns |  5.37 |    0.86 | 0.1030 |     - |     - |     432 B |
+|              Fast | Learning Algorithms |    30.54 ns |  0.517 ns |  0.741 ns |  0.16 |    0.03 | 0.0306 |     - |     - |     128 B |
+|   Vafzamora_Fast1 | Learning Algorithms |    32.13 ns |  0.699 ns |  0.718 ns |  0.18 |    0.04 | 0.0306 |     - |     - |     128 B |
+|   Vafzamora_Fast2 | Learning Algorithms |    35.05 ns |  0.764 ns |  0.909 ns |  0.19 |    0.04 | 0.0306 |     - |     - |     128 B |
+| Vafzamora_Obvious | Learning Algorithms |    33.12 ns |  0.697 ns |  0.745 ns |  0.18 |    0.04 | 0.0306 |     - |     - |     128 B |
 
 ## Reverse String Preserving Spaces - [File](src/Algorithms/ArraysAndStrings/ReverseStringPreservingSpaces.cs)
 
