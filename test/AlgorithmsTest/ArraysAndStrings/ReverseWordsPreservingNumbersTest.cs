@@ -12,7 +12,17 @@ namespace AlgorithmsTest.ArraysAndStrings
 
             string returnedValue = new ReverseWordsPreservingNumbers().FirstTry(myEntireString);
 
-            Assert.Equal("ehT kciuq, orb567nw 125 sexof pmuj revo eht yzal, yzzuf, sdnuoh!", returnedValue);
+            Assert.Equal("ehT ,kciuq orb567nw 125 sexof pmuj revo eht ,yzal ,yzzuf !sdnuoh", returnedValue);
+        }
+
+        [Fact]
+        public void FirstTry_Reverse_Words_In_Hello_World_String()
+        {
+            string myEntireString = "Hello W0rld!";
+
+            string returnedValue = new ReverseWordsPreservingNumbers().FirstTry(myEntireString);
+
+            Assert.Equal("olleH W0!dlr", returnedValue);
         }
     }
 }

@@ -15,19 +15,16 @@ namespace Algorithms.ArraysAndStrings
             int start = -1;
             int positionOfSpaceOrNumber = 0;
 
-            while (start < input.Length && positionOfSpaceOrNumber < input.Length)
+            while (positionOfSpaceOrNumber < input.Length - 1)
             {
-                bool isLowerLetter = input[positionOfSpaceOrNumber] >= 'a' && input[positionOfSpaceOrNumber] <= 'z';
-                bool isUpperLetter = input[positionOfSpaceOrNumber] >= 'A' && input[positionOfSpaceOrNumber] <= 'Z';
+                bool isNumberOrSpaceOrEndOfString = (input[positionOfSpaceOrNumber] >= '0' && input[positionOfSpaceOrNumber] <= '9')
+                                                            || input[positionOfSpaceOrNumber] == ' ';
 
-                if (!(isLowerLetter || isUpperLetter))
+                if (isNumberOrSpaceOrEndOfString)
                 {
                     int end = positionOfSpaceOrNumber - 1;
                     while (start < end)
-                    {
-                        sb.Append(input[end]);
-                        end--;
-                    }
+                        sb.Append(input[end--]);
 
                     start = positionOfSpaceOrNumber;
 
@@ -36,6 +33,9 @@ namespace Algorithms.ArraysAndStrings
 
                 positionOfSpaceOrNumber++;
             }
+
+            while (start < positionOfSpaceOrNumber)
+                sb.Append(input[positionOfSpaceOrNumber--]);
 
             return sb.ToString();
         }
