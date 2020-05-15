@@ -44,9 +44,10 @@
 
 ## Check Permutation - [File](src/Algorithms/ArraysAndStrings/CheckPermutation.cs)
 
-|   Method |    first |   second |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|--------- |--------- |--------- |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
-| FirstTry | abcdefgh | fdceagbh | 48.38 ns | 0.9950 ns | 0.9307 ns |  1.00 | 0.1277 |     - |     - |     536 B |
+|             Method |    first |   second |     Mean |     Error |    StdDev |   Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|------------------- |--------- |--------- |---------:|----------:|----------:|---------:|------:|--------:|-------:|------:|------:|----------:|
+|           FirstTry | abcdefgh | fdceagbh | 72.50 ns | 14.088 ns | 41.540 ns | 39.85 ns |  1.00 |    0.00 | 0.1280 |     - |     - |     536 B |
+| SbyteTry_Vafzamora | abcdefgh | fdceagbh | 65.83 ns |  1.384 ns |  3.342 ns | 66.08 ns |  1.14 |    0.62 | 0.0362 |     - |     - |     152 B |
 
 ## URLify - [File](src/Algorithms/ArraysAndStrings/URLify.cs)
 

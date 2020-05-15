@@ -34,9 +34,11 @@ namespace Algorithms.ArraysAndStrings
 
             return true;
         }
+
         [Benchmark]
         [Arguments("abcdefgh", "fdceagbh")]
-        public bool SbyteTry_Vafzamora(string first, string second) {
+        public bool SbyteTry_Vafzamora(string first, string second)
+        {
             if (first == null || second == null || first.Length != second.Length)
                 return false;
 
@@ -45,14 +47,13 @@ namespace Algorithms.ArraysAndStrings
             for (int i = 0; i < first.Length; i++)
                 asciiTable[first[i]]++;
 
-            for (int i = 0; i < second.Length; i++) {
+            for (int i = 0; i < second.Length; i++)
+            {
                 if (--asciiTable[second[i]] < 0)
                     return false;
             }
 
             return true;
         }
-
-
     }
 }
