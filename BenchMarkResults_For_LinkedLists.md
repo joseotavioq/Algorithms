@@ -16,9 +16,9 @@
 
 ## Sum Lists - [File](src/Algorithms/LinkedLists/SumLists.cs)
 
-|   Method |                first |               second |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|--------- |--------------------- |--------------------- |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
-| FirstTry | Algor(...)nt32] [51] | Algor(...)nt32] [51] | 1.873 us | 0.0369 us | 0.0552 us |  1.00 | 0.0286 |     - |     - |     128 B |
+|   Method |                first |               second |     Mean |   Error |  StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------- |--------------------- |--------------------- |---------:|--------:|--------:|------:|-------:|------:|------:|----------:|
+| FirstTry | Algor(...)nt32] [51] | Algor(...)nt32] [51] | 442.5 ns | 7.94 ns | 7.43 ns |  1.00 | 0.0305 |     - |     - |     128 B |
 
 ## Return Kth to Last - [File](src/Algorithms/LinkedLists/ReturnKthToLast.cs)
 

@@ -37,14 +37,10 @@ namespace Algorithms.LinkedLists
             Node<int> head = null;
             Node<int> current = null;
 
-            decimal number = 0;
-
             while (sum > 0)
             {
-                number = (decimal)sum / 10;
-                sum = (int)number;
-
-                int digit = (int)((number - sum) * 10);
+                int digit = sum % 10;
+                sum /= 10;
 
                 if (head == null)
                 {
@@ -74,13 +70,10 @@ namespace Algorithms.LinkedLists
                 current = current.Next;
             }
 
-            int multiply = 10;
-            for (int i = 1; i < length; i++)
-            {
-                multiply *= 10;
-            }
+            while (length-- > 0)
+                number *= 10;
 
-            return (int)(number * multiply);
+            return (int)number;
         }
     }
 }
