@@ -37,10 +37,11 @@
 
 ## Is Unique - [File](src/Algorithms/ArraysAndStrings/IsUnique.cs)
 
-|    Method |    value |      Mean |     Error |     StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
-|---------- |--------- |----------:|----------:|-----------:|------:|-------:|------:|------:|----------:|
-|  FirstTry | abcdefgh | 335.90 ns | 6.7666 ns | 13.0370 ns |  1.00 | 0.1578 |     - |     - |     664 B |
-| SecondTry | abcdefgh |  17.65 ns | 0.3643 ns |  0.3408 ns |  0.05 | 0.0362 |     - |     - |     152 B |
+|         Method |    value |      Mean |     Error |     StdDev |    Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------------- |--------- |----------:|----------:|-----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
+|       FirstTry | abcdefgh | 429.64 ns | 80.473 ns | 237.275 ns | 277.11 ns |  1.00 |    0.00 | 0.1583 |     - |     - |     664 B |
+|      SecondTry | abcdefgh |  43.51 ns |  0.910 ns |   1.012 ns |  43.65 ns |  0.06 |    0.00 | 0.0363 |     - |     - |     152 B |
+| MyTry_Vafzmora | abcdefgh |  77.70 ns |  4.254 ns |  12.136 ns |  81.77 ns |  0.24 |    0.10 | 0.0172 |     - |     - |      72 B |
 
 ## Check Permutation - [File](src/Algorithms/ArraysAndStrings/CheckPermutation.cs)
 
