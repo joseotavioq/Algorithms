@@ -23,12 +23,8 @@
 
         public void Push(T value)
         {
-            if(Length + 1 > _items.Length)
-            {
-                var newArray = new T[_items.Length * 2];
-                _items.CopyTo(newArray, 0);
-                _items = newArray;
-            }
+            if (Length >= _items.Length)
+                ResizeArray(_items.Length * 2);
 
             _items[Length] = value;
             Length++;
@@ -39,6 +35,9 @@
             if (Length == 0)
                 return default(T);
 
+            if (Length < _items.Length / 4)
+                ResizeArray(_items.Length / 4);
+
             var item = _items[Length - 1];
             _items[Length - 1] = default(T);
             Length--;
@@ -48,6 +47,16 @@
         public bool IsEmpty()
         {
             return Length == 0;
+        }
+
+        private void ResizeArray(int length)
+        {
+            var newArray = new T[length];
+
+            for (int i = 0; i < Length; i++)
+                newArray[i] = _items[i];
+
+            _items = newArray;
         }
     }
 }
