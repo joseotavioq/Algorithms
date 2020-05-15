@@ -19,3 +19,11 @@
 |   Method |                first |               second |     Mean |     Error |    StdDev | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |--------- |--------------------- |--------------------- |---------:|----------:|----------:|------:|-------:|------:|------:|----------:|
 | FirstTry | Algor(...)nt32] [51] | Algor(...)nt32] [51] | 1.873 us | 0.0369 us | 0.0552 us |  1.00 | 0.0286 |     - |     - |     128 B |
+
+## Return Kth to Last - [File](src/Algorithms/LinkedLists/ReturnKthToLast.cs)
+
+|    Method |                 head | k |      Mean |     Error |    StdDev | Ratio | RatioSD | Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |--------------------- |-- |----------:|----------:|----------:|------:|--------:|------:|------:|------:|----------:|
+|  FirstTry | Algor(...)nt32] [43] | 3 |  4.674 ns | 0.1621 ns | 0.2219 ns |  1.00 |    0.00 |     - |     - |     - |         - |
+| SecondTry | Algor(...)nt32] [43] | 3 | 16.453 ns | 0.3955 ns | 1.0556 ns |  3.53 |    0.27 |     - |     - |     - |         - |
+|  ThirdTry | Algor(...)nt32] [43] | 3 |  2.784 ns | 0.1266 ns | 0.1856 ns |  0.60 |    0.03 |     - |     - |     - |         - |
