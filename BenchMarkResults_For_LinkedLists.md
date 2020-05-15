@@ -28,3 +28,10 @@
 | SecondTry | Algor(...)nt32] [43] | 3 | 61.505 ns | 1.2938 ns | 1.4381 ns | 13.86 |    0.51 | 0.0421 |     - |     - |     176 B |
 |  ThirdTry | Algor(...)nt32] [43] | 3 | 14.031 ns | 0.1111 ns | 0.0985 ns |  3.16 |    0.10 |      - |     - |     - |         - |
 | FourthTry | Algor(...)nt32] [43] | 3 |  2.750 ns | 0.1190 ns | 0.1055 ns |  0.62 |    0.03 |      - |     - |     - |         - |
+
+## Loop Detection - [File](src/Algorithms/LinkedLists/LoopDetection.cs)
+
+|    Method |                 head |       Mean |     Error |     StdDev |     Median | Ratio |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|---------- |--------------------- |-----------:|----------:|-----------:|-----------:|------:|-------:|------:|------:|----------:|
+|  FirstTry | Algor(...)nt32] [43] | 421.496 ns | 8.4010 ns | 23.9686 ns | 412.779 ns |  1.00 | 0.1817 |     - |     - |     760 B |
+| SecondTry | Algor(...)nt32] [43] |   5.231 ns | 0.0392 ns |  0.0366 ns |   5.228 ns |  0.01 |      - |     - |     - |         - |
