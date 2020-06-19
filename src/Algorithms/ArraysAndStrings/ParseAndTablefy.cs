@@ -60,7 +60,7 @@ namespace Algorithms.ArraysAndStrings
             foreach (var item in elementsParsed)
             {
                 sb.Append(item.Key);
-                if (columnIndex < elementsParsed.Count)
+                if (columnIndex < elementsParsed.Count - 1)
                 {
                     sb.Append(" | ");
                 }
@@ -87,7 +87,7 @@ namespace Algorithms.ArraysAndStrings
                         sb.Append(item.Value[rowIndex]);
                     }
 
-                    if (columnIndex < elementsParsed.Count)
+                    if (columnIndex < elementsParsed.Count - 1)
                     {
                         sb.Append(" | ");
                         columnIndex++;

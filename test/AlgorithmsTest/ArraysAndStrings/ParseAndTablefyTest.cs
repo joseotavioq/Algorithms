@@ -2,7 +2,6 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Algorithms.ArraysAndStrings;
-using System.Xml;
 
 namespace AlgorithmsTest.ArraysAndStrings
 {
@@ -58,7 +57,7 @@ namespace AlgorithmsTest.ArraysAndStrings
             Assert.Equal((long)22, result["root.transactions.value"][2]);
             Assert.Equal((long)43, result["root.transactions.value"][3]);
 
-            Assert.Equal(@$"root.account | root.date | root.transactions.value | root.information.name | root.information.age | {NEWLINE}------------------------------------------------------------------------------------------------------{NEWLINE}abc123 | 2020-11-06T00:00:00Z | 45 | ABC DEF | 33 | {NEWLINE}abc123 | 2020-11-06T00:00:00Z | 10 | ABC DEF | 33 | {NEWLINE}abc123 | 2020-11-06T00:00:00Z | 22 | ABC DEF | 33 | {NEWLINE}abc123 | 2020-11-06T00:00:00Z | 43 | ABC DEF | 33 | {NEWLINE}", stringResult);
+            Assert.Equal(@$"root.account | root.date | root.transactions.value | root.information.name | root.information.age{NEWLINE}---------------------------------------------------------------------------------------------------{NEWLINE}abc123 | 2020-11-06T00:00:00Z | 45 | ABC DEF | 33{NEWLINE}abc123 | 2020-11-06T00:00:00Z | 10 | ABC DEF | 33{NEWLINE}abc123 | 2020-11-06T00:00:00Z | 22 | ABC DEF | 33{NEWLINE}abc123 | 2020-11-06T00:00:00Z | 43 | ABC DEF | 33{NEWLINE}", stringResult);
         }
     }
 }
