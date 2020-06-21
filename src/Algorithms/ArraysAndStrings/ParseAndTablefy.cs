@@ -8,7 +8,7 @@ namespace Algorithms.ArraysAndStrings
     {
         public (Dictionary<string, List<object>>, string) Execute(JToken currentObject)
         {
-            Dictionary<string, List<object>> elementsParsed = new Dictionary<string, List<object>>();
+            var elementsParsed = new Dictionary<string, List<object>>();
 
             parse(currentObject, elementsParsed, "root");
 
@@ -17,7 +17,7 @@ namespace Algorithms.ArraysAndStrings
             return (elementsParsed, stringResult);
         }
 
-        private void parse(JToken currentObject, Dictionary<string, List<object>> elementsParsed, string elementName)
+        private void parse(JToken currentObject, Dictionary<string, List<object>> elementsParsed, string parentElementName)
         {
             if (currentObject == null)
             {
@@ -27,26 +27,46 @@ namespace Algorithms.ArraysAndStrings
             {
                 foreach (var child in currentObject.Children())
                 {
-                    parse(child, elementsParsed, elementName);
+                    parse(child, elementsParsed, parentElementName);
                 }
             }
             else if (currentObject.Type == JTokenType.Property)
             {
                 JProperty property = currentObject as JProperty;
-                string propName = (!string.IsNullOrEmpty(elementName)) ? $"{elementName}.{property.Name}" : property.Name;
+                string propName = $"{parentElementName}.{property.Name}";
                 parse(property.Value, elementsParsed, propName);
             }
             else
             {
                 JValue value = currentObject as JValue;
 
-                if (!elementsParsed.ContainsKey(elementName))
+                if (!elementsParsed.ContainsKey(parentElementName))
                 {
-                    elementsParsed.Add(elementName, new List<object>() { value.Value });
+                    elementsParsed.Add(parentElementName, new List<object>() { value.Value });
                 }
                 else
                 {
-                    elementsParsed[elementName].Add(value.Value);
+                    elementsParsed[parentElementName].Add(value.Value);
+                }
+
+                correctNumberOfRowsInPastColumns(elementsParsed, parentElementName);
+            }
+        }
+
+        private void correctNumberOfRowsInPastColumns(Dictionary<string, List<object>> elementsParsed, string currentElementName)
+        {
+            int maxRowLength = getMaxRowLength(elementsParsed);
+
+            foreach (var item in elementsParsed)
+            {
+                while (item.Value.Count < maxRowLength)
+                {
+                    item.Value.Add(item.Value[item.Value.Count - 1]);
+                }
+
+                if (item.Key == currentElementName)
+                {
+                    break;
                 }
             }
         }
@@ -67,8 +87,9 @@ namespace Algorithms.ArraysAndStrings
                 columnIndex++;
             }
 
+            string division = new string('-', sb.Length);
             sb.AppendLine();
-            sb.AppendLine(string.Empty.PadRight(sb.Length, '-'));
+            sb.AppendLine(division);
 
             //Print Rows
             int rowsLength = getMaxRowLength(elementsParsed);
@@ -107,7 +128,9 @@ namespace Algorithms.ArraysAndStrings
             foreach (var item in elementsParsed)
             {
                 if (item.Value.Count > max)
+                {
                     max = item.Value.Count;
+                }
             }
 
             return max;
