@@ -8,16 +8,18 @@ namespace Algorithms.ArraysAndStrings
     {
         public (Dictionary<string, List<object>>, string) Execute(JToken currentObject)
         {
-            var elementsParsed = new Dictionary<string, List<object>>();
+            var columnsIndex = new Dictionary<string, int>();
+            var columnsAndRows = new Dictionary<string, List<object>>();
 
-            parse(currentObject, elementsParsed, "root");
+            int maxRowLength = 0;
+            parse(currentObject, columnsIndex, columnsAndRows, "root", ref maxRowLength);
 
-            var stringResult = tablefy(elementsParsed);
+            var stringResult = tablefy(columnsAndRows, maxRowLength);
 
-            return (elementsParsed, stringResult);
+            return (columnsAndRows, stringResult);
         }
 
-        private void parse(JToken currentObject, Dictionary<string, List<object>> elementsParsed, string parentElementName)
+        private void parse(JToken currentObject, Dictionary<string, int> columnsIndex, Dictionary<string, List<object>> columnsAndRows, string parentElementName, ref int maxRowLength)
         {
             if (currentObject == null)
             {
@@ -27,60 +29,64 @@ namespace Algorithms.ArraysAndStrings
             {
                 foreach (var child in currentObject.Children())
                 {
-                    parse(child, elementsParsed, parentElementName);
+                    parse(child, columnsIndex, columnsAndRows, parentElementName, ref maxRowLength);
                 }
             }
             else if (currentObject.Type == JTokenType.Property)
             {
                 JProperty property = currentObject as JProperty;
                 string propName = $"{parentElementName}.{property.Name}";
-                parse(property.Value, elementsParsed, propName);
+                parse(property.Value, columnsIndex, columnsAndRows, propName, ref maxRowLength);
             }
-            else
+            else if (currentObject is JValue)
             {
                 JValue value = currentObject as JValue;
 
-                if (!elementsParsed.ContainsKey(parentElementName))
+                if (!columnsAndRows.ContainsKey(parentElementName))
                 {
-                    elementsParsed.Add(parentElementName, new List<object>() { value.Value });
+                    columnsAndRows.Add(parentElementName, new List<object>() { value.Value });
+                    columnsIndex.Add(parentElementName, columnsIndex.Count);
                 }
                 else
                 {
-                    elementsParsed[parentElementName].Add(value.Value);
+                    columnsAndRows[parentElementName].Add(value.Value);
                 }
 
-                correctNumberOfRowsInPastColumns(elementsParsed, parentElementName);
+                if (maxRowLength < columnsAndRows[parentElementName].Count)
+                {
+                    maxRowLength = columnsAndRows[parentElementName].Count;
+                }
+
+                correctNumberOfRowsInPastColumns(columnsIndex, columnsAndRows, parentElementName, maxRowLength);
             }
         }
 
-        private void correctNumberOfRowsInPastColumns(Dictionary<string, List<object>> elementsParsed, string currentElementName)
+        private void correctNumberOfRowsInPastColumns(Dictionary<string, int> columnsIndex, Dictionary<string, List<object>> columnsAndRows, string currentElementName, int maxRowLength)
         {
-            int maxRowLength = getMaxRowLength(elementsParsed);
+            int currentColumnIndex = columnsIndex[currentElementName];
 
-            foreach (var item in elementsParsed)
+            foreach (var item in columnsAndRows)
             {
-                while (item.Value.Count < maxRowLength)
+                if (columnsIndex[item.Key] <= currentColumnIndex)
                 {
-                    item.Value.Add(item.Value[item.Value.Count - 1]);
-                }
-
-                if (item.Key == currentElementName)
-                {
-                    break;
+                    while (item.Value.Count < maxRowLength)
+                    {
+                        item.Value.Add(item.Value[item.Value.Count - 1]);
+                    }
                 }
             }
         }
 
-        private string tablefy(Dictionary<string, List<object>> elementsParsed)
+        private string tablefy(Dictionary<string, List<object>> columnsAndRows, int maxRowLength)
         {
             StringBuilder sb = new StringBuilder();
 
             //Print Header
             int columnIndex = 0;
-            foreach (var item in elementsParsed)
+            foreach (var item in columnsAndRows)
             {
                 sb.Append(item.Key);
-                if (columnIndex < elementsParsed.Count - 1)
+                if (columnIndex < columnsAndRows.Count - 1)
                 {
                     sb.Append(" | ");
                 }
@@ -92,12 +98,10 @@ namespace Algorithms.ArraysAndStrings
             sb.AppendLine(division);
 
             //Print Rows
-            int rowsLength = getMaxRowLength(elementsParsed);
-
-            for (int rowIndex = 0; rowIndex < rowsLength; rowIndex++)
+            for (int rowIndex = 0; rowIndex < maxRowLength; rowIndex++)
             {
                 columnIndex = 0;
-                foreach (var item in elementsParsed)
+                foreach (var item in columnsAndRows)
                 {
                     if (rowIndex >= item.Value.Count)
                     {
@@ -108,7 +112,7 @@ namespace Algorithms.ArraysAndStrings
                         sb.Append(item.Value[rowIndex]);
                     }
 
-                    if (columnIndex < elementsParsed.Count - 1)
+                    if (columnIndex < columnsAndRows.Count - 1)
                     {
                         sb.Append(" | ");
                         columnIndex++;
@@ -119,21 +123,6 @@ namespace Algorithms.ArraysAndStrings
             }
 
             return sb.ToString();
-        }
-
-        private int getMaxRowLength(Dictionary<string, List<object>> elementsParsed)
-        {
-            int max = 0;
-
-            foreach (var item in elementsParsed)
-            {
-                if (item.Value.Count > max)
-                {
-                    max = item.Value.Count;
-                }
-            }
-
-            return max;
         }
     }
 }
