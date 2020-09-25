@@ -3,7 +3,7 @@ using Xunit;
 
 namespace AlgorithmsTest.Design
 {
-    public class ElevatorTest
+    public class NumberSwapperTest
     {
         [Fact]
         public void Create_Elevator()
