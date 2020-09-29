@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using BenchmarkDotNet.Attributes;
 
-namespace Algorithms.ArraysAndStrings
+namespace Algorithms.Stacks
 {
     [MemoryDiagnoser]
     public class ReverseEachWord

@@ -1,7 +1,7 @@
-﻿using Algorithms.ArraysAndStrings;
+﻿using Algorithms.Stacks;
 using Xunit;
 
-namespace AlgorithmsTest.ArraysAndStrings
+namespace AlgorithmsTest.Stacks
 {
     public class ReverseEachWordTest
     {
