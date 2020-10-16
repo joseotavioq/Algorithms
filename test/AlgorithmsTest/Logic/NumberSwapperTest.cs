@@ -66,6 +66,42 @@ namespace AlgorithmsTest.Logic
         }
 
         [Fact]
+        public void FirstTry_MaxValue_Test()
+        {
+            int x = int.MaxValue;
+            int y = 5;
+
+            (x, y) = new NumberSwapper().FirstTry(x, y);
+
+            Assert.Equal(5, x);
+            Assert.Equal(int.MaxValue, y);
+        }
+
+        [Fact]
+        public void FirstTry_MaxValue_MinValue_Test()
+        {
+            int x = int.MaxValue;
+            int y = int.MinValue;
+
+            (x, y) = new NumberSwapper().FirstTry(x, y);
+
+            Assert.Equal(int.MinValue, x);
+            Assert.Equal(int.MaxValue, y);
+        }
+
+        [Fact]
+        public void FirstTry_MinValue_MaxValue_Test()
+        {
+            int x = int.MinValue;
+            int y = int.MaxValue;
+
+            (x, y) = new NumberSwapper().FirstTry(x, y);
+
+            Assert.Equal(int.MaxValue, x);
+            Assert.Equal(int.MinValue, y);
+        }
+
+        [Fact]
         public void SecondTry_Basic_Test()
         {
             int x = 10;
@@ -123,6 +159,42 @@ namespace AlgorithmsTest.Logic
 
             Assert.Equal(10, x);
             Assert.Equal(10, y);
+        }
+
+        [Fact]
+        public void SecondTry_MaxValue_Test()
+        {
+            int x = int.MaxValue;
+            int y = 5;
+
+            (x, y) = new NumberSwapper().SecondTry(x, y);
+
+            Assert.Equal(5, x);
+            Assert.Equal(int.MaxValue, y);
+        }
+
+        [Fact]
+        public void SecondTry_MaxValue_MinValue_Test()
+        {
+            int x = int.MaxValue;
+            int y = int.MinValue;
+
+            (x, y) = new NumberSwapper().SecondTry(x, y);
+
+            Assert.Equal(int.MinValue, x);
+            Assert.Equal(int.MaxValue, y);
+        }
+
+        [Fact]
+        public void SecondTry_MinValue_MaxValue_Test()
+        {
+            int x = int.MinValue;
+            int y = int.MaxValue;
+
+            (x, y) = new NumberSwapper().SecondTry(x, y);
+
+            Assert.Equal(int.MaxValue, x);
+            Assert.Equal(int.MinValue, y);
         }
     }
 }

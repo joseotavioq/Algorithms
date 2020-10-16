@@ -7,6 +7,10 @@
     <StartupObject>Algorithms.Program</StartupObject>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+  </PropertyGroup>
+
   <ItemGroup>
     <Compile Remove="BenchmarkDotNet.Artifacts\**" />
     <EmbeddedResource Remove="BenchmarkDotNet.Artifacts\**" />

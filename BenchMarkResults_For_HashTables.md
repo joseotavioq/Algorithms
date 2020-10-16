@@ -17,3 +17,10 @@
 |---------- |--------- |--------- |----------:|----------:|----------:|------:|--------:|-------:|------:|------:|----------:|
 |  FirstTry | Array[4] | Array[4] |  13.51 ns | 0.2759 ns | 0.2833 ns |  1.00 |    0.00 |      - |     - |     - |         - |
 | SecondTry | Array[4] | Array[4] | 311.05 ns | 4.0098 ns | 3.5546 ns | 23.05 |    0.55 | 0.0606 |     - |     - |     256 B |
+
+## Word Frequencies - [File](src/Algorithms/HashTables/WordFrequencies.cs)
+
+|   Method |             sentence | word |       Mean |     Error |    StdDev |     Median | Ratio | RatioSD |  Gen 0 | Gen 1 | Gen 2 | Allocated |
+|--------- |--------------------- |----- |-----------:|----------:|----------:|-----------:|------:|--------:|-------:|------:|------:|----------:|
+| FirstTry | This (...)mine! [84] | this | 1,949.1 ns | 192.69 ns | 568.15 ns | 1,756.7 ns |  1.00 |    0.00 | 0.1640 |     - |     - |     688 B |
+| ThirdTry | This (...)mine! [84] | this |   222.1 ns |   8.96 ns |  25.27 ns |   219.9 ns |  0.12 |    0.03 |      - |     - |     - |         - |
