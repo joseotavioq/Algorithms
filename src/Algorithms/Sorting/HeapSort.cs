@@ -1,6 +1,4 @@
-﻿using BenchmarkDotNet.Validators;
-
-namespace Algorithms.Sorting
+﻿namespace Algorithms.Sorting
 {
     public class HeapSort
     {
