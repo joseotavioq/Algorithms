@@ -1,5 +1,4 @@
 ﻿using Algorithms.ArraysAndStrings;
-using System.Collections.Generic;
 using Xunit;
 
 namespace AlgorithmsTest.ArraysAndStrings
