@@ -3,10 +3,10 @@ using Xunit;
 
 namespace AlgorithmsTest.Tree
 {
-    public class IsItSymetricTest
+    public class IsItSymmetricTest
     {
         [Fact]
-        public void Symetric_Tree()
+        public void Symmetric_Tree()
         {
             var tree = new TreeNode<int>(1)
             {
@@ -30,13 +30,13 @@ namespace AlgorithmsTest.Tree
                 }
             };
 
-            var result = new IsItSymetric().FirstTry(tree);
+            var result = new IsItSymmetric().FirstTry(tree);
 
             Assert.True(result);
         }
 
         [Fact]
-        public void Assymetric_Tree()
+        public void Assymmetric_Tree()
         {
             var tree = new TreeNode<int>(1)
             {
@@ -60,7 +60,7 @@ namespace AlgorithmsTest.Tree
                 }
             };
 
-            var result = new IsItSymetric().FirstTry(tree);
+            var result = new IsItSymmetric().FirstTry(tree);
 
             Assert.False(result);
         }

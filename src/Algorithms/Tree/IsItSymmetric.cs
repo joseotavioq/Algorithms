@@ -1,6 +1,6 @@
 ﻿namespace Algorithms.Tree
 {
-    public class IsItSymetric
+    public class IsItSymmetric
     {
         public bool FirstTry(TreeNode<int> root)
         {
