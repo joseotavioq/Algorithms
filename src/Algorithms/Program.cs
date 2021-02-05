@@ -1,11 +1,4 @@
-﻿using Algorithms.ArraysAndStrings;
-using Algorithms.HashTables;
-using Algorithms.LinkedLists;
-using Algorithms.Logic;
-using Algorithms.Recursion;
-using Algorithms.Sorting;
-using Algorithms.Stacks;
-using BenchmarkDotNet.Running;
+﻿using BenchmarkDotNet.Running;
 
 namespace Algorithms
 {
@@ -13,7 +6,8 @@ namespace Algorithms
     {
         public static void Main(string[] args)
         {
-            var summary = BenchmarkRunner.Run<NumberSwapper>();
+            //var summary = BenchmarkRunner.Run<NumberSwapper>();
+            var summary = BenchmarkRunner.Run(typeof(Program).Assembly);
         }
     }
 }
